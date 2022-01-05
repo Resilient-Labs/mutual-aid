@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import Login from './Login';
-import Signup from './Signup';
+import Landing from './Landing';
 
 class App extends Component {
 
   render() {
     return (
       <>
-        <Login />
-        <hr></hr>
-        <Signup />
+        <Landing/>
       </>
     );
   }
