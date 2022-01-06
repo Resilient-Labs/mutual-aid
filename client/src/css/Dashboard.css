@@ -1,0 +1,26 @@
+.profile-pic {
+  border: 4px solid #FFFFFF;
+  border-radius: 100%;
+  box-shadow: 5px -5px 52px 0px #99ACB5;
+  height: 10rem;
+  margin-right: 2rem;
+  width: 10rem;
+}
+.welcome-box {
+  background: #003090;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  padding: 2em 8em;
+}
+.house-box {
+  border-radius: 8px;
+  padding: 2rem;
+}
+.bank-card{
+  background: #CCE7CE;
+  border: 2px solid #CCE7CE;
+  border-radius: 6px;
+  height: 219.53px;
+  margin: 0 auto;
+  width: 311px;
+}
