@@ -9,10 +9,7 @@ function Sidebar() {
       <p>LOGO</p>
       <nav className="d-flex flex-column">
         <a href="#">Profile</a>
-        <a href="#">Scoreboard</a>
-        <a href="#">Chat</a>
-        <a href="#">Banking</a>
-        <a href="#">Docs</a>
+        <a href="#">House</a>
         <Link to="/settings">Settings</Link>
       </nav>
       <Button className="btn btn-light btn-lg sign-out">Sign out</Button>

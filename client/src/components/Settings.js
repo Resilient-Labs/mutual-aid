@@ -7,7 +7,42 @@ export default class Settings extends Component {
     return (
       <div>
         <h1>Settings</h1>
+
         <Form action="/settings" method="POST">
+          {/* ==== Profile Picture ==== */}
+          <Form.Group className="mb-3">
+            <Form.Control type="file" name="picture"></Form.Control>
+            <Button variant="primary" type="submit">
+              Upload
+            </Button>
+          </Form.Group>
+
+          {/* ==== Bio ====*/}
+          <h5>About Me</h5>
+          <Form.Group className="mb-3" controlId="formBio">
+            <Form.Label>Bio</Form.Label>
+            <Form.Control
+              as="textarea"
+              type="text"
+              placeholder="Tell us a little about you."
+              style={{ height: '200px' }}
+            ></Form.Control>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formInterests">
+            <Form.Label>Interests</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="What are some of your interests?"
+            ></Form.Control>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formGoals">
+            <Form.Label>Goals</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="What are your goals?"
+            ></Form.Control>
+          </Form.Group>
+          {/* ==== Change Name ====*/}
           <h5>Change Name</h5>
           <Form.Group className="mb-3" controlId="formFirstNameChange">
             <Form.Label>First Name</Form.Label>
