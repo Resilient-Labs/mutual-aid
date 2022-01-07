@@ -1,4 +1,6 @@
-/* landing */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
 .accordion-item {
   background-color: #003090 !important;
   color: #ffffff !important;
@@ -40,6 +42,10 @@
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
+.display-4 {
+    color: #003090 !important;
+}
+
 .footer {
   color: #003090 !important;
   height: 200px;
@@ -54,11 +60,8 @@
 .footerItem {
   color: black;
 }
-
-.hr {
-  width: 100%;
-  height: 100px;
-}
+.card-img-top {
+  height: 20rem;
 
 .nav {
   background-color: white !important;
