@@ -1,56 +1,63 @@
-// server.js
+const express = require("express");
+const app = express();
+const mongoose = require("mongoose");
+const passport = require("passport");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+const methodOverride = require("method-override");
+const flash = require("express-flash");
+const logger = require("morgan");
+const connectDB = require("./config/database");
+const mainRoutes = require("./routes/main");
+const postRoutes = require("./routes/posts");
 
-// set up ======================================================================
-// get all the tools we need
-const express  = require('express');
-const multer   = require('multer');
-const app      = express();
-const port     = process.env.PORT || 2121;
-const MongoClient = require('mongodb').MongoClient
-const mongoose = require('mongoose');
-const passport = require('passport');
-const flash    = require('connect-flash');
+//Use .env file in config folder
+require("dotenv").config({ path: "./config/.env" });
 
-const morgan       = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser   = require('body-parser');
-const session      = require('express-session');
-const ObjectId     = require('mongodb').ObjectId
+// Passport config
+require("./config/passport")(passport);
 
-const configDB  = require('./config/database.js');
-const dotenv    = require('dotenv').config()
+//Connect To Database
+connectDB();
 
+//Using EJS for views
+app.set("view engine", "ejs");
 
-// configuration ===============================================================
-mongoose.connect(configDB.url, (err, database) => {
-  if (err) return console.log(err)
-  db = database
-  require('./app/routes.js')(app, passport, db);
-}); // connect to our database
+//Static Folder
+app.use(express.static("public"));
 
-require('./config/passport')(passport); // pass passport for configuration
+//Body Parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// set up our express application
-app.use(morgan('dev')); // log every request to the console
-app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser.json()); // get information from html forms
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public')); // used to access files under the public folder
+//Logging
+app.use(logger("dev"));
 
+//Use forms for put / delete
+app.use(methodOverride("_method"));
 
-app.set('view engine', 'ejs'); // set up ejs for templating
+// Setup Sessions - stored in MongoDB
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: false,
+    saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  })
+);
 
-// required for passport
-app.use(session({
-    secret: 'rcbootcamp2021b', // session secret
-    resave: true,
-    saveUninitialized: true
-}));
+// Passport middleware
 app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
+app.use(passport.session());
 
+//Use flash messages for errors, info, ect...
+app.use(flash());
 
-// launch ======================================================================
-app.listen(port);
-console.log('Mutual Aid Bank is connected to port ' + port);
+//Setup Routes For Which The Server Is Listening
+app.use("/", mainRoutes);
+app.use("/post", postRoutes);
+
+//Server Running
+app.listen(process.env.PORT, () => {
+  console.log("Server is running, you better catch it!");
+});
