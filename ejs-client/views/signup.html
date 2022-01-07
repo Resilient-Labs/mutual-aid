@@ -18,41 +18,42 @@
       <h1>Sign Up</h1>
 
       <form action="/signup" method="POST">
-        <div class="mb-3" controlId="formBasicFirst">
+        <div class="mb-3">
           <label for="first-name">First Name</label>
-          <input class="first-name" type="text" placeholder="First name" />
+          <input name="first-name" type="text" placeholder="First name" />
         </div>
 
-        <div class="mb-3" controlId="formBasicLast">
+        <div class="mb-3">
           <label for="last-name">Last Name</label>
-          <input class="last-name" type="text" placeholder="Last name" />
+          <input name="last-name" type="text" placeholder="Last name" />
         </div>
 
-        <div class="mb-3" controlId="formBasicPronouns">
+        <div class="mb-3">
           <label for="pronouns">Pronouns</label>
           <input
-            class="pronouns"
+            name="pronouns"
             type="text"
-            placeholder="If you would like to share"
+            placeholder="If you would like to
+          share"
           />
         </div>
 
-        <div class="mb-3" controlId="formBasicEmail">
+        <div class="mb-3">
           <label for="email">Email address</label>
-          <input class="email" type="email" placeholder="Enter email" />
+          <input name="email" type="email" placeholder="Enter email" />
           <p class="text-muted">
             We'll never share your email with anyone else.
           </p>
         </div>
 
-        <div class="mb-3" controlId="formBasicPassword">
+        <div class="mb-3">
           <label for="password">Password</label>
-          <input class="password" type="password" placeholder="Password" />
+          <input name="password" type="password" placeholder="Password" />
         </div>
-        <div class="mb-3" controlId="formBasicCheckbox">
+        <div class="mb-3">
           <label for="terms">I have agreed to the Terms & Conditions</label>
           <input
-            class="terms"
+            name="terms"
             type="checkbox"
             label="I have agreed to the Terms & Conditions"
           />
