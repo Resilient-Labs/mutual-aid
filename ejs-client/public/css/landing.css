@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 .accordion-item {
@@ -59,10 +60,8 @@
 .footerItem {
   color: black;
 }
-
 .card-img-top {
   height: 20rem;
-}
 
 .nav {
   background-color: white !important;
@@ -73,7 +72,6 @@
   font-size: 0.8em !important;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   padding: 0 2em !important;
-
 }
 
 .placeholder {
