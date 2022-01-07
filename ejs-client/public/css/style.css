@@ -1,0 +1,135 @@
+/* Dashboard */
+#dashboard-container {
+  max-width: 1800px;
+}
+.profile-pic {
+  border: 4px solid #ffffff;
+  border-radius: 100%;
+  box-shadow: 5px -5px 52px 0px #99acb5;
+  height: 7rem;
+  margin-right: 2rem;
+  width: 7rem;
+}
+.welcome-box {
+  background: #003090;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  padding: 2em 8em;
+}
+.house-box {
+  border-radius: 8px;
+  padding: 2rem;
+}
+.bank-card {
+  background: #cce7ce;
+  border: 2px solid #cce7ce;
+  border-radius: 6px;
+  height: 219.53px;
+  margin: 0 auto;
+  width: 311px;
+}
+
+.welcome-summary {
+  border-bottom: 2px solid white;
+}
+
+/* Sidebar */
+nav a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #a8fbe2;
+}
+.sidebar {
+  background-color: #a92d7e;
+  min-height: 100vh;
+  position: relative;
+}
+.sign-out {
+  margin-top: 8rem;
+}
+
+/* Settings */
+
+/* login */
+
+/* landing */
+.accordion-item {
+  background-color: #003090 !important;
+  color: #ffffff !important;
+  margin: 2em 0 !important;
+}
+
+.accordion.header {
+  background-color: #003090 !important;
+  color: #ffffff !important;
+}
+
+.btn-flat {
+  border-color: #003090 !important;
+  color: #003090 !important;
+  font-size: 0.8em !important;
+  margin-right: 1em !important;
+  width: 8em;
+}
+
+.btn-flat2 {
+  background-color: #003090 !important;
+  color: white !important;
+  font-size: 0.8em !important;
+  width: 8em;
+}
+
+.btn-md {
+  font-size: 0.8em !important;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  padding: 1rem 1.5rem;
+}
+
+.col {
+  margin-right: 8em !important;
+}
+
+.card-title {
+  color: #003090 !important;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.footer {
+  color: #003090 !important;
+  height: 200px;
+  position: relative;
+  top: 150px;
+  left: 90px;
+  float: left;
+  width: 90%;
+  text-align: center;
+}
+
+.footerItem {
+  color: black;
+}
+
+.hr {
+  width: 100%;
+  height: 100px;
+}
+
+.nav {
+  background-color: white !important;
+}
+
+.nav-link {
+  color: #003090 !important;
+  font-size: 0.8em !important;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  padding: 0 2em !important;
+}
+
+.placeholder {
+  background-color: #003090 !important;
+}

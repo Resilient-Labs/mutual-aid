@@ -41,6 +41,10 @@
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
+.display-4 {
+    color: #003090 !important;
+}
+
 .footer {
   color: #003090 !important;
   height: 200px;
@@ -56,9 +60,8 @@
   color: black;
 }
 
-.hr {
-  width: 100%;
-  height: 100px;
+.card-img-top {
+  height: 20rem;
 }
 
 .nav {
@@ -70,6 +73,7 @@
   font-size: 0.8em !important;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   padding: 0 2em !important;
+
 }
 
 .placeholder {
