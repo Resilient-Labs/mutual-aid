@@ -1,167 +1,177 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-      <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
 
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-       <div class="container" id="dashboard-container">
-        <nav collapseOnSelect expand="lg" variant="dark">
-          <div>
-            {/* <img
-              src={logo}
-              height="30"
-              class="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            /> */}
-            LOGO
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav class="me-auto">
-                <Nav.Link href="#features">About</Nav.Link>
-                <Nav.Link href="#pricing">Contact</Nav.Link>
-                <Nav.Link href="#pricing">Lorem</Nav.Link>
-                <Nav.Link href="#pricing">Lorem</Nav.Link>
-              </Nav>
-              <Nav>
-                <Link to="/login">
-                  <Button variant="flat" size="md">
-                    Log In
-                  </Button>
-                </Link>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href="../public/css/landing.css" rel="stylesheet" type="text/css" />
 
-                <Link to="/signup">
-                  <Button variant="flat2" size="md">
-                    Apply
-                  </Button>
-                </Link>
-              </Nav>
-            </Navbar.Collapse>
-          </div>
-        </nav>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <Placeholder as="p" animation="glow">
-          <Placeholder
-            xs={12}
-            componentClass="textarea"
-            style={{ height: 500 }}
-          />
-        </Placeholder>
+</head>
 
-        <!-- NOT HEADING -->
-        <div class="container">
-          <div class="row">
-            <div class="Col-md-8">
-              <div class=" card mt-5">
-                <Card.Body>
-                  <Card.Title style={{ fontSize: 40 }}>
-                    Your roadmap to financial freedom
-                  </Card.Title>
-                  <Card.Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </Card.Text>
+<body>
+    <!-- NAVIGATION BAR + LOGIN/APPLY BUTTONS -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">Logo</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button type="button" class="btn btn-flat">Log in</button>
+                    <button type="button" class="btn btn-flat2">Apply</button>
+                </form>
+            </div>
+        </div>
+    </nav>
 
-                  <Accordion class="mt-5">
-                    <Accordion.Item eventKey="0">
-                      <Accordion.Header>
-                        What is Mutual Bank Aid?
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
-                      </Accordion.Body>
-                    </Accordion.Item>
 
-                    <Accordion.Item eventKey="1">
-                      <Accordion.Header>
-                        Is Mutual Bank Aid safe to use?
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
-                      </Accordion.Body>
-                    </Accordion.Item>
+    <!-- PLACEHOLDER FOR THE IMAGE -->
+    <div class="card-glow bg-primary h-75">
+        <div class="card-body">
+            Placeholder
+        </div>
+    </div>
 
-                    <Accordion.Item eventKey="2">
-                      <Accordion.Header>
-                        Why choose Mutual Bank Aid over others?
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non proident, sunt in culpa qui officia deserunt mollit
-                        anim id est laborum.
-                      </Accordion.Body>
-                    </Accordion.Item>
-                  </Accordion>
-                </Card.Body>
-              </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+                <!-- CARD FOR MOTTO, DESCRIPTION OF MBA + FREQUENTLY ASKED QUESTIONS  -->
+                <div class="row">
+                    <div class="col-sm-8">
+
+                        <div class="card mt-5">
+                            <div class="card-body">
+                                <!-- MOTTO + DESCRIPTION OF MBA -->
+                                <h1 class="display-4">Your roadmap to financial freedom</h1>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis explicabo
+                                    eius architecto distinctio deserunt molestiae incidunt vel repellendus, vitae
+                                    nostrum. Iure modi voluptatem laboriosam, aperiam laborum rerum nihil eius!</p>
+
+                                <div class="accordion" id="accordionExample">
+                                <!-- QUESTION ONE -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                What is Mutual Bank Aid?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                                    Veritatis ab excepturi molestiae corporis? At, excepturi. Voluptate,
+                                                    explicabo corrupti earum, sapiente enim quasi nemo distinctio vel
+                                                    eos modi magnam labore commodi.</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- QUESTION TWO -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingTwo">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                Is Mutual Bank Aid safe to use?
+                                            </button>
+                                        </h2>
+                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                                    Veritatis ab excepturi molestiae corporis? At, excepturi. Voluptate,
+                                                    explicabo corrupti earum, sapiente enim quasi nemo distinctio vel
+                                                    eos modi magnam labore commodi.</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- QUESTION THREE -->
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingThree">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                Why choose Mutual Bank Aid over others?
+                                            </button>
+                                        </h2>
+
+                                        <div id="collapseThree" class="accordion-collapse collapse"
+                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                                    Veritatis ab excepturi molestiae corporis? At, excepturi. Voluptate,
+                                                    explicabo corrupti earum, sapiente enim quasi nemo distinctio vel
+                                                    eos modi magnam labore commodi.</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CUSTOMER STORY CARD -->
+                    <div class="col-sm-4">
+                        <div class="card mt-5 mx-5" style="width: 25rem;">
+                            <img src="" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Customer’s Story</h5>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
-            <Col xs={6} md={4}>
-              <Card class="mt-5">
-                <Card.Img variant="top" src={placeholder} height="300" />
-                <Card.Body>
-                  <Card.Title>Customer's Story</Card.Title>
-                  <Card.Text>
-                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                    odit aut fugit, sed quia consequuntur magni dolores eos qui
-                    ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                    qui dolorem ipsum quia dolor sit amet.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          </div>
-        </div>
+            <!-- FOOTER -->
+            <div class="container">
+                <footer class="py-3 my-4">
+                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                        <li class="nav-item"><a class="nav-link" href="#app" >Mobile App</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#company">Company</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#help">Help</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+                    </ul>
 
-        <footer class="footer">
-          <Nav class="justify-content-center">
-            <Nav.Link href="#app">Mobile App</Nav.Link>
-            <Nav.Link href="#community">Community</Nav.Link>
-            <Nav.Link href="#company">Company</Nav.Link>
-            <Nav.Link href="#help">Help</Nav.Link>
-            <Nav.Link href="#resources">Resources</Nav.Link>
-          </Nav>
-          <hr></hr>
-        </footer>
-         <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
-      </div>
-  </body>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
 </html>
