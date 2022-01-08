@@ -11,6 +11,6 @@
   ```
   - Do 'npm install' in your terminal.
   - Run with 'npm start' in your terminal.
-### Remmenber do not share the Environment variable.
+### Remember do not to share the Environment variable.
 #### Note: 
 Make sure your terminal is navigated to the backejs folder to run the server.
