@@ -5,6 +5,10 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  bio: {
+    type: String,
+    require: true,
+  },
   cloudinaryId: {
     type: String,
     require: true,
@@ -19,4 +23,4 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("UserProfile", UserProfileSchema);
