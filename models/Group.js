@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const GroupSchema = new mongoose.Schema({
     admin: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
@@ -41,4 +41,4 @@ type: mongoose.Schema.Types.ObjectId,
 ref: "User",
 */
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Group", GroupSchema);
