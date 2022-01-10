@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const houseController = require("../controllers/house");
+const houseController = require("../controllers/houses");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //get house
