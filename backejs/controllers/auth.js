@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect("/dashboard");
   }
   res.render("login", {
     title: "Login",
@@ -39,7 +39,7 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/profile");
+      res.redirect(req.session.returnTo || "/dashboard");
     });
   })(req, res, next);
 };
@@ -56,7 +56,7 @@ exports.logout = (req, res) => {
 
 exports.getSignup = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect("/dashboard");
   }
   res.render("signup", {
     title: "Create Account",
@@ -71,8 +71,9 @@ exports.postSignup = (req, res, next) => {
     validationErrors.push({
       msg: "Password must be at least 8 characters long",
     });
-  if (req.body.password !== req.body.confirmPassword)
-    validationErrors.push({ msg: "Passwords do not match" });
+    
+  // if (req.body.password !== req.body.confirmPassword)
+  //   validationErrors.push({ msg: "Passwords do not match" });
 
   if (validationErrors.length) {
     req.flash("errors", validationErrors);
@@ -83,7 +84,9 @@ exports.postSignup = (req, res, next) => {
   });
 
   const user = new User({
-    userName: req.body.userName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    pronouns: req.body.pronouns,
     email: req.body.email,
     password: req.body.password,
   });
@@ -108,7 +111,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/profile");
+          res.redirect("/dashboard");
         });
       });
     }
