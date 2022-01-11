@@ -16,7 +16,7 @@ const UserProfileSchema = new mongoose.Schema({
   interests: {
     type: String,
     require: true,
-  }
+  },
   cloudinaryId: {
     type: String,
     require: true,
