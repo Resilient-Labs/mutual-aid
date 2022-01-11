@@ -22,6 +22,15 @@ module.exports = {
       console.log(err);
     }
   },
+  //get settings
+  getSettings: async (req, res) => {
+    try {
+      res.render("settings.ejs")
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  
  //Note for DevOps : Creates the profile sending the data that is collected in settings.ejs to the database. Now is just sending image,user,bio but more can be added.
   createProfile: async (req, res) => {
     try {
@@ -29,12 +38,18 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path);
 
       await Profile.create({
+        user: req.user.id,
         image: result.secure_url,
         cloudinaryId: result.public_id,
+        bio:req.body.bio,
         interests:req.body.interests,
         goals:req.body.goals,
-        user: req.user.id,
-        bio:req.body.bio
+        firstName:req.body.firstName,
+        lastNAme:req.body.lastName,
+        currentEmail:req.body.currentEmail,
+        newEmail:req.body.newEmail,
+        phoneNumber:req.body.phoneNumber
+
       });
       console.log("Profile has been added!");
       res.redirect("/profile");
