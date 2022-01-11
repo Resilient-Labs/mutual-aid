@@ -1,35 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+h1{
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+}
 
+.navbar{
+  background-color: #C5D5E4 !important;
+}
 .accordion-item {
-  background-color: #003090 !important;
-  color: #ffffff !important;
+  color: #C5D5E4 !important;
   margin: 2em 0 !important;
 }
 
 .accordion.header {
-  background-color: #003090 !important;
+  background-color: #051D40 !important;
   color: #ffffff !important;
 }
 
 .btn-flat {
-  border-color: #003090 !important;
-  color: #003090 !important;
+  border-color: #051D40 !important;
+  color: #051D40 !important;
   font-size: 0.8em !important;
   margin-right: 1em !important;
+  text-transform: uppercase;
   width: 8em;
 }
 
 .btn-flat2 {
-  background-color: #003090 !important;
-  color: white !important;
+  background-color: #051D40 !important;
+  color: #FCC03E !important;
   font-size: 0.8em !important;
+  text-transform: uppercase;
   width: 8em;
 }
 
 .btn-md {
   font-size: 0.8em !important;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
   padding: 1rem 1.5rem;
 }
 
@@ -39,7 +46,11 @@
 
 .card-title {
   color: #003090 !important;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+}
+
+.card-glow{
+  background-color: #C5D5E4;
 }
 
 .display-4 {
@@ -62,15 +73,15 @@
 }
 .card-img-top {
   height: 20rem;
-
+}
 .nav {
   background-color: white !important;
 }
 
 .nav-link {
-  color: #003090 !important;
-  font-size: 0.8em !important;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: #051D40 !important;
+  font-size: 1em !important;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
   padding: 0 2em !important;
 }
 
