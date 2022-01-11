@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+
+
+    <!-- ==== SIDEBAR ==== -->
+    <div>
+      <div class="d-flex">
+          <div class="col-sm-2">
+            <div class="sidebar font-dm-sans p-4 text-white">
+              <img src="/images/MAB-LOGO.png" alt="Mutual Bank Aid logo">
+              <nav class="d-flex flex-column">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/house">House</a>
+                <a href="/profile">Profile</a>
+                <a href="/settings">Settings</a>
+              </nav>
+              <button class="btn-sign-out"><a href="/signout">Sign out</button></a>
+            </div>
+          </div>
+
+          <!-- ==== WELCOME BOX + PORTFOLIO ==== -->
+          <div class="col-sm-10 content">
+            <div class="row-mb-3" class="mx-1">
+              <div class="welcome-box flex-column justify-content-center align-items-between p-1 py-4 px-6 mx-3">
+                <div class="welcome-summary d-flex justify-content-between align-items-center pb-3 mx-3">
+
+                  <div class="welcome-box-left d-flex align-items-center">
+                    <img
+                      class="profile-pic"
+                      src="https://res.cloudinary.com/resilientcoders-org/image/upload/c_fit,h_300,w_255/dpr_2.0/v1638422713/marcos_kt52bi.png"
+                    />
+                    <h1 class="my-1 text-white h5">Welcome back, {name}</h1>
+                  </div>
+                  <div>
+                    <h2 class="my-1 text-white h5">Your Portfolio:</h2>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-around text-white mt-3">
+                  <div>
+
+                    <h6 class="mb-0">Bio</h6>
+                    <p class="mb-0">{bio}</p>
+                  </div>
+                  <div>
+                    <h6 class="mb-0">Goals</h6>
+                    <p class="mb-0">{goals}</p>
+                  </div>
+                  <div>
+                    <h6 class="mb-0">Interests</h6>
+
+                    <p class="mb-0">{interests}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <!-- ===== CURRENT HOUSE + BANK INFO ===== -->
+            <div class="d-flex mt-3">
+              <div class="col">
+                <div class="house-box mx-5 mt-5">
+
+                  <p class="fw-bold">
+                    Current House: <span class="fw-normal">{house}</span>
+                  </p>
+                  <p class="fw-bold">
+                    Minimum amount due for {duedate}:
+                    <span class="fw-normal">${shmoneydue}</span>
+                  </p>
+                  <p class="fw-bold">
+                    Big schmoney month:
+                    <span class="fw-normal">{shmoneydate}</span>
+                  </p>
+                </div>
+              </div>
+              <div class="col">
+                <div>
+
+                  <div class="bank-card mt-5">
+
+                    <p>bank card image goes here</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

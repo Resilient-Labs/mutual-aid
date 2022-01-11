@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mutual Aid Bank</title>
+    <link rel="stylesheet" href="../public/css/join-house.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="font-dm-sans">
+      <div class="nav-pages">
+        <a href="index.html">
+          <img
+            src="../public/images/MAB-LOGO.png"
+            alt="Mutual Aid Bank logo"
+            class="logo"
+          />
+        </a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <a href="#" class="btn-nav-login">Log In</a>
+        <a href="#" class="btn-nav-apply">Apply</a>
+      </div>
+    </nav>
+
+    <!-- ==== New House ==== -->
+    <div class="container">
+      <div class="row justify-content-around mt-5">
+        <div class="col-12 col-md-8 col-lg-5">
+          <div class="card">
+            <div class="card-header">
+              <h1 class="m-0 h2">Create a new house</h1>
+            </div>
+            <div class="card-body">
+              <form action="/newHouse" method="POST">
+                <div class="mb-1 mt-0" controlId="formBasicEmail">
+                  <label>Admin</label>
+                  <div class="input-group pt-2">
+                    <div class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <input
+                      class="form-control"
+                      name="admin"
+                      type="text"
+                      placeholder="Tim Apple"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="mb-3 mt-3 d-flex flex-column"
+                  controlId="formBasicPassword"
+                >
+                  <label>House Name</label>
+                  <div class="input-group pt-2">
+                    <div class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-lock"></i>
+                    </div>
+                    <input
+                      class="form-control"
+                      name="houseName"
+                      type="text"
+                      placeholder="Strawberry Mansion"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="mb-3 mt-3 d-flex flex-column"
+                  controlId="formBasicPassword"
+                >
+                  <label>Start Date</label>
+                  <div class="input-group pt-2">
+                    <div class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-lock"></i>
+                    </div>
+                    <input class="form-control" name="startDate" type="date" />
+                  </div>
+                </div>
+
+                <div
+                  class="mb-3 mt-3 d-flex flex-column"
+                  controlId="formBasicPassword"
+                >
+                  <label>End Date</label>
+                  <div class="input-group pt-2">
+                    <div class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-lock"></i>
+                    </div>
+                    <input class="form-control" name="endDate" type="date" />
+                  </div>
+                </div>
+
+                <div
+                  class="mb-3 mt-3 d-flex flex-column"
+                  controlId="formBasicPassword"
+                >
+                  <label>Member Count</label>
+                  <div class="input-group pt-2">
+                    <div class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-lock"></i>
+                    </div>
+                    <input
+                      class="form-control"
+                      name="amountOfMembers"
+                      type="number"
+                    />
+                  </div>
+                </div>
+
+                <div
+                  class="mb-3 mt-3 d-flex flex-column"
+                  controlId="formBasicPassword"
+                >
+                  <label>Monthly Dues</label>
+                  <div class="input-group pt-2">
+                    <div class="input-group-text" id="basic-addon1">
+                      <i class="fas fa-lock"></i>
+                    </div>
+                    <input
+                      class="form-control"
+                      name="monthlyPaymentAmount"
+                      type="number"
+                    />
+                  </div>
+                </div>
+                <button class="btn mt-2 login-btn" type="submit">Login</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- ==== Existing Houses ==== -->
+        <div
+          class="col-12 col-md-9 col-lg-7 col-xl-6 d-flex justify-content-around"
+        >
+          <div class="row mt-5 mt-md-4">
+            <h4>Join Existing Houses</h4>
+            <hr />
+            <div class="col-6">
+              <div class="card mt-1 mb-3">
+                <div class="card-header">
+                  <h5>Gardner Gang</h5>
+                </div>
+
+                <div
+                  class="card-body d-flex flex-column justify-content-around"
+                >
+                  <p class="card-text">Min. Payment: $3.50</p>
+                  <p class="card-text">Start date: Jan 21 2022</p>
+                  <p class="card-text">Members: 10/12</p>
+
+                  <a href="#" class="btn join-house-btn">Join House</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card mt-1 mb-3">
+                <div class="card-header">
+                  <h5>Gardner Gang</h5>
+                </div>
+
+                <div
+                  class="card-body d-flex flex-column justify-content-around"
+                >
+                  <p class="card-text">Min. Payment: $3.50</p>
+                  <p class="card-text">Start date: Jan 21 2022</p>
+                  <p class="card-text">Members: 10/12</p>
+
+                  <a href="#" class="btn join-house-btn">Join House</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card mt-1 mb-3">
+                <div class="card-header">
+                  <h5>Gardner Gang</h5>
+                </div>
+
+                <div
+                  class="card-body d-flex flex-column justify-content-around"
+                >
+                  <p class="card-text">Min. Payment: $3.50</p>
+                  <p class="card-text">Start date: Jan 21 2022</p>
+                  <p class="card-text">Members: 10/12</p>
+
+                  <a href="#" class="btn join-house-btn">Join House</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
