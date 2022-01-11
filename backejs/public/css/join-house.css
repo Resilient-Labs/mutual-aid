@@ -1,0 +1,33 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
+
+.card {
+  font-family: 'Josefin Sans', 'Arial', sans-serif;
+  color: black;
+  border-radius: 1rem !important;
+  margin-top: 2rem !important;
+}
+
+.card-header {
+  background: #051d40 !important;
+  color: whitesmoke !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding-top: 1.5rem !important;
+}
+
+.privacy-message {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.login-btn,
+.join-house-btn {
+  background: #fd871b !important;
+  color: whitesmoke !important;
+}
+
+.navbar {
+  height: 80px;
+}
