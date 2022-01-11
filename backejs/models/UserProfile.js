@@ -9,6 +9,14 @@ const UserProfileSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  goals: {
+    type: String,
+    require: true,
+  },
+  interests: {
+    type: String,
+    require: true,
+  }
   cloudinaryId: {
     type: String,
     require: true,

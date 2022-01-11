@@ -31,6 +31,8 @@ module.exports = {
       await Profile.create({
         image: result.secure_url,
         cloudinaryId: result.public_id,
+        interests:req.body.interests,
+        goals:req.body.goals,
         user: req.user.id,
         bio:req.body.bio
       });
