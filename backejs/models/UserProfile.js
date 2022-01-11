@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
-  image: {
-    type: String,
-    require: true,
+const UserProfileSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
   },
-  bio: {
+  image: {
     type: String,
     require: true,
   },
@@ -13,9 +13,37 @@ const PostSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+  bio: {
+    type: String,
+    require: true,
+  },
+  interests: {
+    type: String,
+    require: true,
+  },
+  goals: {
+    type: String,
+    require: true,
+  },
+  firstName: {
+    type: String,
+    require: true
+  },
+  lastNAme: {
+    type: String,
+    require: true
+  },
+  currentEmail: {
+    type: String,
+    require: true
+  },
+  newEmail: {
+    type: String,
+    require: true
+  },
+  phoneNumber: {
+    type: Number,
+    require: true
   },
   createdAt: {
     type: Date,

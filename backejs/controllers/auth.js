@@ -64,6 +64,7 @@ exports.getSignup = (req, res) => {
 };
 
 exports.postSignup = (req, res, next) => {
+
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
     validationErrors.push({ msg: "Please enter a valid email address." });
@@ -71,8 +72,9 @@ exports.postSignup = (req, res, next) => {
     validationErrors.push({
       msg: "Password must be at least 8 characters long",
     });
-  if (req.body.password !== req.body.confirmPassword)
-    validationErrors.push({ msg: "Passwords do not match" });
+    
+  // if (req.body.password !== req.body.confirmPassword)
+  //   validationErrors.push({ msg: "Passwords do not match" });
 
   if (validationErrors.length) {
     req.flash("errors", validationErrors);
@@ -83,24 +85,28 @@ exports.postSignup = (req, res, next) => {
   });
 
   const user = new User({
-    userName: req.body.userName,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    pronouns: req.body.pronouns,
     email: req.body.email,
     password: req.body.password,
   });
 
   User.findOne(
-    { $or: [{ email: req.body.email }, { userName: req.body.userName }] },
+    { $or: [{ email: req.body.email }, { firstName: req.body.firstName }] },
     (err, existingUser) => {
       if (err) {
         return next(err);
       }
       if (existingUser) {
+        console.log(existingUser)
         req.flash("errors", {
           msg: "Account with that email address or username already exists.",
         });
         return res.redirect("../signup");
       }
       user.save((err) => {
+        console.log('save')
         if (err) {
           return next(err);
         }
@@ -108,7 +114,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/profile");
+          res.redirect("/dashboard");
         });
       });
     }
