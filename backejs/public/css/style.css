@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap');
 ​
 /* Josh W. Corneau CSS Reset (with adjustments) */
@@ -115,6 +116,7 @@ nav a {
   color: #FFF;
 }
 ​
+
 /* Dashboard */
 #dashboard-container {
   max-width: 1800px;
@@ -146,9 +148,33 @@ nav a {
   margin: 0 auto;
   width: 311px;
 }
-​
+
+
 .welcome-summary {
   border-bottom: 2px solid white;
 }
+
+/* Sidebar */
+nav a {
+  color: #003090;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #000000;
+}
+.sidebar {
+  background-color: #cfe2fc;
+  min-height: 100vh;
+  position: relative;
+}
+.sign-out {
+  margin-top: 8rem;
+}
+
 /* Settings */
+
 /* login */
+

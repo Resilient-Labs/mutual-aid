@@ -1,0 +1,59 @@
+/* Dashboard */
+#dashboard-container {
+  max-width: 1800px;
+}
+.profile-pic {
+  border: 4px solid #ffffff;
+  border-radius: 100%;
+  box-shadow: 5px -5px 52px 0px #99acb5;
+  height: 4.5rem;
+  margin-right: 2rem;
+  width: 4.5rem;
+}
+.welcome-box {
+  background: #003090;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  padding: 2em 8em;
+}
+.house-box {
+  border-radius: 8px;
+  padding: 2rem;
+  background: #003090;
+}
+.bank-card {
+  background: #cce7ce;
+  border: 2px solid #cce7ce;
+  border-radius: 6px;
+  height: 219.53px;
+  margin: 0 auto;
+  width: 311px;
+}
+
+.welcome-summary {
+  border-bottom: 2px solid white;
+}
+
+/* Sidebar */
+nav a {
+  color: #003090;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #000000;
+}
+.sidebar {
+  background-color: #cfe2fc;
+  min-height: 100vh;
+  position: relative;
+}
+.sign-out {
+  margin-top: 8rem;
+}
+
+/* Settings */
+
+/* login */

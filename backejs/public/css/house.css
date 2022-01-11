@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
 
 nav a{
@@ -133,5 +134,15 @@ nav a:hover {
   background-color: #FD871B;
   color: #FFFFFC;
   text-decoration: none !important;
+}
+
+=======
+.deposit-form {
+  color: #36454F;
+  background-color: #FFFFFC;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  width: 25%;
 }
 
