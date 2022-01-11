@@ -21,7 +21,9 @@ const UserProfileSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+
   goals: {
+
     type: String,
     require: true,
   },

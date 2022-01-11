@@ -1,0 +1,68 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap');
+​
+.login-copy div {
+  float:left;
+}
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+h1 {
+  color: #333132;
+  font-family: 'Lora', serif;
+  font-size: 3.5rem !important;
+  font-weight: 600 !important;
+}
+.img-bagheera {
+  border: 8px solid #FFF;
+  border-radius: 1rem;
+  height: 25%;
+  float: left;
+  filter: brightness(1.25);
+  margin-top: 3rem;
+}
+.input-box {
+  align-items: center;
+  background: #FFF;
+  border-radius: 8px;
+  display: flex;
+  gap: 1.5rem;
+  padding: 8px 12px;
+}
+.input-box input {
+  border-radius: 8px;
+  border: none;
+  flex-grow: 1;
+}
+.privacy-message {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+​
+.login-btn {
+  background: #003090;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  color: #FFF;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: .5rem 1rem;
+}
+​
+.navbar {
+  height: 80px;
+}
+​
+​
+.join-house-btn {
+  background: #fd871b !important;
+  color: whitesmoke !important;
+}
