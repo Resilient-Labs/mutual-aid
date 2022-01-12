@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 const House = require("../models/House"); 
 
+=======
+>>>>>>> origin/backejs
 module.exports = {
   getHouse: async (req, res) => {
     try {
@@ -9,6 +12,7 @@ module.exports = {
       console.log('herror is happening')
       console.log(err);
     }
+<<<<<<< HEAD
   },
   joinHouse: async (req, res) => {
     try {
@@ -55,5 +59,7 @@ module.exports = {
       console.log(err);
     }
 
+=======
+>>>>>>> origin/backejs
   }
 };
