@@ -13,6 +13,7 @@ module.exports = {
     }
   },
   //get dashboard
+  //testing mergeee
   getDashboard: async (req, res) => {
     try {
       const profile = await Profile.find({ user: req.user.id });
