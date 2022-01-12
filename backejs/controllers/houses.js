@@ -2,44 +2,9 @@ const House = require("../models/House");
 
 module.exports = {
   getHouse: async (req, res) => {
-    function getHouseStartDate(){
-      return new moment('2022-12-13T03:24:00')
-    }
-console.log('please work')
     try {
-      let paymentDate = null
-      const startDate = getHouseStartDate()
-      const currentDate = moment()
-      
-      if(currentDate.isAfter(startDate)){
-        const dayOfMonth = startDate.date()
-        paymentDate = moment().date(dayOfMonth)
-        if (paymentDate.isBefore(currentDate)){
-          paymentDate = paymentDate.add(1, 'month')
-        }
-      }
-      else{
-        paymentDate = startDate
-      }
-      let endOfCycle = startDate.add(1, 'year')
-      let cycleOver = false
-      if(paymentDate.isAfter(endOfCycle)){
-        countDown = 0
-        cycleOver = true
-      }
-      console.log(endOfCycle, cycleOver)
-      //getting millisecs between the two dates (86,400 x 1000 = ms in a day)
-      let millisecondsPerDay = 86400 * 1000
-      let countDown = Math.floor((paymentDate - currentDate) / millisecondsPerDay)
-
-      res.render("house.ejs", {
-      endOfCycle,
-      countDown,
-      cycleOver,
-      startDate: startDate.format('MM/DD/YYYY'),
-      currentDate,
-      paymentDate: paymentDate.format('MM/DD/YYYY'),
-      });
+      console.log("working house")
+      res.render("house.ejs");
     } catch (err) {
       console.log('herror is happening')
       console.log(err);
