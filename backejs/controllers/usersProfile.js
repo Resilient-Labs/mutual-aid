@@ -13,11 +13,11 @@ module.exports = {
     }
   },
   //get dashboard
-  //testing mergeee
   getDashboard: async (req, res) => {
     try {
       const profile = await Profile.find({ user: req.user.id });
       console.log('hello there')
+      console.log(profile)
       //Note for DevOps : to render .ejs template it can be 'profile.ejs' or what front-end called 'settings'. This is taking care of rendering the users' profile data comming from the database
       res.render("dashboard.ejs", { profile: profile, user: req.user });
     } catch (err) {
@@ -48,10 +48,6 @@ module.exports = {
         bio:req.body.bio,
         interests:req.body.interests,
         goals:req.body.goals,
-        firstName:req.body.firstName,
-        lastNAme:req.body.lastName,
-        currentEmail:req.body.currentEmail,
-        newEmail:req.body.newEmail,
         phoneNumber:req.body.phoneNumber
 
       });
