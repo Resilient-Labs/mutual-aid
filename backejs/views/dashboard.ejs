@@ -27,6 +27,7 @@
               <nav class="d-flex flex-column">
                 <a href="/dashboard">Dashboard</a>
                 <a href="/house">House</a>
+                <a href="/profile">Profile</a>
                 <a href="/settings">Settings</a>
               </nav>
               <button class="btn-sign-out"><a href="/signout">Sign out</button></a>
@@ -40,11 +41,14 @@
                 <div class="welcome-summary d-flex justify-content-between align-items-center pb-3 mx-3">
 
                   <div class="welcome-box-left d-flex align-items-center">
+                    <%if(profile.length){ %>
                     <img
                       class="profile-pic"
-                      src="https://res.cloudinary.com/resilientcoders-org/image/upload/c_fit,h_300,w_255/dpr_2.0/v1638422713/marcos_kt52bi.png"
+                      src= <%= profile[0].image%> 
                     />
-                    <h1 class="my-1 text-white h5">Welcome back, {name}</h1>
+                    <% } %>
+                    
+                    <h1 class="my-1 text-white h5">Welcome back, <%= user.firstName%></h1>
                   </div>
                   <div>
                     <h2 class="my-1 text-white h5">Your Portfolio:</h2>
@@ -53,18 +57,23 @@
 
                 <div class="d-flex justify-content-around text-white mt-3">
                   <div>
-
+                  
                     <h6 class="mb-0">Bio</h6>
-                    <p class="mb-0">{bio}</p>
+                    <%if(profile.length){ %> 
+                    <p class="mb-0"><%= profile[0].bio%></p>
+                    <% } %>
                   </div>
                   <div>
                     <h6 class="mb-0">Goals</h6>
-                    <p class="mb-0">{goals}</p>
+                    <%if(profile.length){ %> 
+                    <p class="mb-0"><%= profile[0].goals%></p>
+                    <% } %>
                   </div>
                   <div>
                     <h6 class="mb-0">Interests</h6>
-
-                    <p class="mb-0">{interests}</p>
+                    <%if(profile.length){ %> 
+                    <p class="mb-0"><%= profile[0].interests%></p>
+                    <% } %>
                   </div>
                 </div>
               </div>
