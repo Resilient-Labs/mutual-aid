@@ -1,0 +1,37 @@
+/* === SIDEBAR === */
+
+nav a {
+  color: #051D40;
+  font-size: clamp(1rem, 2.5vw, 2rem); 
+  font-weight: 500;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
+.sidebar {
+  background-color: #C5D5E4;
+  display: flex;
+  flex-direction: column;
+  flex-align: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+}
+.btn-sign-out {
+  align-self: center;
+  background-color: rgb(226 232 240);
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(.5rem, 2.5vw, 1.25rem); 
+  margin-top: clamp(4rem, 5vw, 8rem); 
+  padding: 4px 8px;
+  width: 75%;
+}
+.btn-sign-out:hover {
+  background-color: rgb(200 24 0);
+  color: #FFFFFC;
+}
