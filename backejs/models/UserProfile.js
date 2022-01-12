@@ -21,30 +21,16 @@ const UserProfileSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-
   goals: {
-
     type: String,
     require: true,
   },
-  firstName: {
-    type: String,
-    require: true
-  },
-  lastNAme: {
-    type: String,
-    require: true
-  },
-  currentEmail: {
-    type: String,
-    require: true
-  },
-  newEmail: {
+  phoneNumber: {
     type: String,
     require: true
   },
   phoneNumber: {
-    type: Number,
+    type: String,
     require: true
   },
   createdAt: {

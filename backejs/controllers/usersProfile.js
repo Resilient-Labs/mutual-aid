@@ -5,6 +5,7 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const profile = await Profile.find({ user: req.user.id });
+     
       //Note for DevOps : to render .ejs template it can be 'profile.ejs' or what front-end called 'settings'. This is taking care of rendering the users' profile data comming from the database
       res.render("profile.ejs", { profile: profile, user: req.user });
     } catch (err) {
@@ -25,7 +26,8 @@ module.exports = {
   //get settings
   getSettings: async (req, res) => {
     try {
-      res.render("settings.ejs")
+      const profile = await Profile.find({ user: req.user.id });
+      res.render("settings.ejs", { profile: profile, user: req.user })
     } catch (err) {
       console.log(err);
     }
@@ -33,6 +35,7 @@ module.exports = {
   
  //Note for DevOps : Creates the profile sending the data that is collected in settings.ejs to the database. Now is just sending image,user,bio but more can be added.
   createProfile: async (req, res) => {
+    console.log('hey I am working')
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
@@ -52,7 +55,7 @@ module.exports = {
 
       });
       console.log("Profile has been added!");
-      res.redirect("/profile");
+      res.redirect("/settings");
     } catch (err) {
       console.log(err);
     }
