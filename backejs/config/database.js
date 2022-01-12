@@ -17,5 +17,8 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/stagingejs
