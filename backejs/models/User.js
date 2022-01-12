@@ -1,60 +1,44 @@
-const cloudinary = require("../middleware/cloudinary");
-const Profile = require("../models/UserProfile"); 
+const bcrypt = require("bcrypt");
+const mongoose = require("mongoose");
 
-module.exports = {
-  getProfile: async (req, res) => {
-    try {
-      const profile = await Profile.find({ user: req.user.id });
-     
-      //Note for DevOps : to render .ejs template it can be 'profile.ejs' or what front-end called 'settings'. This is taking care of rendering the users' profile data comming from the database
-      res.render("profile.ejs", { profile: profile, user: req.user });
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  //get dashboard
-  getDashboard: async (req, res) => {
-    try {
-      const profile = await Profile.find({ user: req.user.id });
-      console.log('hello there')
-      console.log(profile)
-      //Note for DevOps : to render .ejs template it can be 'profile.ejs' or what front-end called 'settings'. This is taking care of rendering the users' profile data comming from the database
-      res.render("dashboard.ejs", { profile: profile, user: req.user });
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  //get settings
-  getSettings: async (req, res) => {
-    try {
-      const profile = await Profile.find({ user: req.user.id });
-      res.render("settings.ejs", { profile: profile, user: req.user })
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  
- //Note for DevOps : Creates the profile sending the data that is collected in settings.ejs to the database. Now is just sending image,user,bio but more can be added.
-  createProfile: async (req, res) => {
-    console.log('hey I am working')
-    try {
-      // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+const UserSchema = new mongoose.Schema({
+  firstName: { type: String, unique: true },
+  lastName: { type: String, unique: true },
+  pronouns: { type: String, unique: true },
+  email: { type: String, unique: true },
+  password: String,
+});
 
-      await Profile.create({
-        user: req.user.id,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
-        bio:req.body.bio,
-        interests:req.body.interests,
-        goals:req.body.goals,
-        phoneNumber:req.body.phoneNumber
+// Password hash middleware.
 
-      });
-      console.log("Profile has been added!");
-      res.redirect("/settings");
-    } catch (err) {
-      console.log(err);
+UserSchema.pre("save", function save(next) {
+  const user = this;
+  if (!user.isModified("password")) {
+    return next();
+  }
+  bcrypt.genSalt(10, (err, salt) => {
+    if (err) {
+      return next(err);
     }
-  },
+    bcrypt.hash(user.password, salt, (err, hash) => {
+      if (err) {
+        return next(err);
+      }
+      user.password = hash;
+      next();
+    });
+  });
+});
+
+// Helper method for validating user's password.
+
+UserSchema.methods.comparePassword = function comparePassword(
+  candidatePassword,
+  cb
+) {
+  bcrypt.compare(candidatePassword, this.password, (err, isMatch) => {
+    cb(err, isMatch);
+  });
 };
+
+module.exports = mongoose.model("User", UserSchema);
