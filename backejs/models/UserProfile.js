@@ -21,7 +21,6 @@ const UserProfileSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-<<<<<<< HEAD
   goals: {
     type: String,
     require: true,
@@ -34,34 +33,6 @@ const UserProfileSchema = new mongoose.Schema({
     type: String,
     require: true
   },
-=======
-
-  goals: {
-
-    type: String,
-    require: true,
-  },
-  firstName: {
-    type: String,
-    require: true
-  },
-  lastNAme: {
-    type: String,
-    require: true
-  },
-  currentEmail: {
-    type: String,
-    require: true
-  },
-  newEmail: {
-    type: String,
-    require: true
-  },
-  phoneNumber: {
-    type: Number,
-    require: true
-  },
->>>>>>> origin/stagingejs
   createdAt: {
     type: Date,
     default: Date.now,

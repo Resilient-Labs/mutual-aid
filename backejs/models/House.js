@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const mongoose = require("mongoose");
 //profile schemma
 const houseSchema = new mongoose.Schema({
@@ -44,6 +43,3 @@ const houseSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("house", houseSchema);
-=======
-//TBD
->>>>>>> origin/stagingejs
