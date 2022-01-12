@@ -23,11 +23,11 @@
           
           <img src="/images/MAB-LOGO.png"  class="navbar-brand" alt="Mutual Bank Aid logo">
           <nav class="d-flex flex-column">
-            <a href="/dashboard">Dashboard</a>
-            <a href="/house">House</a>
-            <a href="/settings">Settings</a>
+            <a href="#">Dashboard</a>
+            <a href="#">House</a>
+            <a href="/settings" >Settings</a>
           </nav>
-          <button class="btn-sign-out"><a href="/signout">Sign out</button></a>
+          <button class="btn btn-sign-out"><a>Sign out</button></a>
         </div>
       </div>
    
@@ -104,34 +104,23 @@
 
           <div class="message-board">
             <h3>Message Board</h3>
-            <!-- <% for(var i=0; i<messages.length; i++) {%> -->
+       
               
               <div class="card" style="width: 100%;">
                 <div class="card-body">
                   <span>
-                    Jeon
-                    <!-- <%= messages[i].name %> -->
+                 
+         
                   </span>
                   |
                   <span>
-                    More money for my Starbucks Reserve subscription
+            
                   </span>
                 </div>
               </div>
+      
 
-              <div class="card mt-2" style="width: 100%;">
-                <div class="card-body">
-                  <span>
-                    Jeon
-                    <!-- <%= messages[i].name %> -->
-                  </span>
-                  |
-                  <span>
-                    More money for my Starbucks Reserve subscription
-                  </span>
-                </div>
-              </div>
-               <!-- <% } %> -->
+            
             <form action="/addMessage" method="POST" class="">
               <div class="input-group mb-3">
                 <input type="text" class="form-control mt-2" placeholder="Send a message...." aria-label="Recipient's username" aria-describedby="basic-addon2" name="msg">

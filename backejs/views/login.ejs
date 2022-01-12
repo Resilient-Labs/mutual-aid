@@ -4,87 +4,69 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Mutual Aid Bank</title>
-    <link rel="stylesheet" href="/css/login-signup.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-
-    <link
+    <link rel="stylesheet" href="css/login-signup.css" />
+   <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
   </head>
-
   <body class="bg-moneyhill">
     <nav class="font-dm-sans">
       <div class="nav-pages">
         <a href="index.html">
-          <img src="/images/MAB-LOGO.png" alt="Mutual Aid Bank logo" class="logo">
+          <img src="/images/MAB-LOGO.png" alt="Mutual Aid Bank logo" class="logo" />
         </a>
         <a href="#">About</a>
         <a href="#">Contact</a>
       </div>
       <div>
-        <a href="/login" class="btn-nav-login">Log In</a>
-        <a href="/signup" class="btn-nav-apply">Apply</a>
+        <a href="#" class="btn-nav-login">Log In</a>
+        <a href="#" class="btn-nav-apply">Apply</a>
       </div>
     </nav>
-​
-    <div class="container flex justify-around">
-      <div class="login-copy mt-5">
-        <img src="/images/bagheera-sad.jpeg" alt="Sad Bagheera with puppy eyes :(" class="img-bagheera">
+
+    <div class="container flex justify-around mt-5">
+
+      <div class="login-copy">
         <div>
           <h1>Welcome back!</h1>
-          <p>You've been missed.</p>
+          <p>Bagheeryou a whole lot.</p>
+          <img src="../public/images/bagheera-sad.jpeg" alt="Sad Bagheera with puppy eyes :(" class="img-bagheera" /> 
         </div>
       </div>
-      <div class="login-form mt-5">
-        <div>
-          <div class="account-card">
-            <div class="account-body">
-​
-              <form action="/login" method="POST" class="form-login">
-                <div class="mb-1 mt-0">
-                  <label class="form-title" for="email">Email</label>
-                  <div class="input-box">
-                    <div>
-                      <i class="fas fa-envelope"></i>
-                    </div>
-                    <input
-                      name="email"
-                      type="email"
-                      placeholder="bagheera@hotmail.com"
-                    />
-                  </div>
-                  <p class="text-muted my-2 privacy-message">
-                    We'll never share your email with anyone else.
-                  </p>
-                </div>
-                <div class="mb-3 mt-3 d-flex flex-column"
-                  controlId="formBasicPassword">
-                  <label class="form-title" for="password">Password</label>
-                  <div class="input-box">
-                    <div>
-                      <i class="fas fa-lock"></i>
-                    </div>
-                    <input
-                      name="password"
-                      type="password"
-                      placeholder="iliketobark93"
-                    />
-                  </div>
-                </div>
-                <button class="login-btn" type="submit">Login</button>
-              </form>
-​
+
+      <div class="login-form">
+        <form action="/login" method="POST" class="form-login">
+          <div>
+            <label class="form-title" for="email">Email</label>
+            <div class="input-box">
+              <div>
+                <i class="fas fa-envelope"></i>
+              </div>
+              <input name="email" type="email" placeholder="example@hotmail.com" required />
+            </div>
+            <p class="text-muted my-2 privacy-message">
+              We'll never share your email with anyone else.
+            </p>
+          </div>
+          <div class="mb-3 mt-3">
+            <label class="form-title" for="password">Password</label>
+            <div class="input-box">
+              <div>
+                <i class="fas fa-lock"></i>
+              </div>
+              <input name="password" type="password" placeholder="iliketoeatBEANies93" required />
             </div>
           </div>
-        </div>
-      </div>
+          <button class="login-btn" type="submit">Login</button>
+        </form>
+      </div> 
+      <!-- END OF LOGIN FORM -->
+
     </div>
-​
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -92,6 +74,4 @@
       crossorigin="anonymous"
     ></script>
   </body>
-
 </html>
-

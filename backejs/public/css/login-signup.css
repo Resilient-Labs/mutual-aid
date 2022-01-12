@@ -2,28 +2,187 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@600&display=swap');
-​
-.login-copy div {
-  float:left;
+
+/* === PORTED FROM STYLE.CSS ===  */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Josh W. Corneau CSS Reset (with adjustments) */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-.form-title {
-  font-size: 1.5rem;
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application and set default font size
+*/
+html, body {
+  height: 100%;
+  font-size: 16px;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* Utility Classes */
+
+.bg-moneyhill {
+  background: url('../images/wave-haikei.svg');
+  background-size: cover;
+}
+.flex {
+  display: flex;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.font-inter {
+  font-family: 'Inter', 'Helvetica', sans-serif;
+}
+.font-dm-sans {
+  font-family: 'DM Sans', 'Helvetica', sans-serif;
+}
+
+/* === NAVIGATION BAR === */
+
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+nav a {
+  color: #051D40;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 8px;
+  text-decoration: none;
 }
+.nav-pages {
+  align-items: center;
+  display: flex;
+  gap: 3rem;
+}
+
+.logo {
+  height: 100px;
+  padding-top: .5rem;
+}
+.btn-nav-login {
+  margin-right: 1rem;
+}
+.btn-nav-apply {
+  background: #F59E0B;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  color: #FFF;
+  display: inline;
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+.btn-nav-apply:hover {
+  color: #FFF;
+}
+
+/* Dashboard */
+#dashboard-container {
+  max-width: 1800px;
+}
+.profile-pic {
+  border: 4px solid #ffffff;
+  border-radius: 100%;
+  box-shadow: 5px -5px 52px 0px #99acb5;
+  height: 4.5rem;
+  margin-right: 2rem;
+  width: 4.5rem;
+}
+.welcome-box {
+  background: #003090;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  padding: 2em 8em;
+}
+.house-box {
+  border-radius: 8px;
+  padding: 2rem;
+  background: #003090;
+}
+.bank-card {
+  background: #cce7ce;
+  border: 2px solid #cce7ce;
+  border-radius: 6px;
+  height: 219.53px;
+  margin: 0 auto;
+  width: 311px;
+}
+
+.welcome-summary {
+  border-bottom: 2px solid white;
+}
+/* Settings */
+
+/* login */
+
+/* === PORTED FROM STYLE.CSS ===  */
+
 h1 {
   color: #333132;
   font-family: 'Lora', serif;
   font-size: 3.5rem !important;
   font-weight: 600 !important;
+  margin-bottom: 1rem !important;
 }
 .img-bagheera {
-  border: 8px solid #FFF;
-  border-radius: 1rem;
-  height: 25%;
+  border: 6px solid #FFF;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  height: 300px;
   float: left;
   filter: brightness(1.25);
-  margin-top: 3rem;
+  margin-top: .5rem;
+}
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 .input-box {
   align-items: center;
@@ -43,7 +202,7 @@ h1 {
   font-weight: 500;
   font-size: 0.75rem;
 }
-​
+
 .login-btn {
   background: #003090;
   border: none;
@@ -56,12 +215,12 @@ h1 {
   margin-top: 1rem;
   padding: .5rem 1rem;
 }
-​
+
 .navbar {
   height: 80px;
 }
-​
-​
+
+
 .join-house-btn {
   background: #fd871b !important;
   color: whitesmoke !important;
