@@ -1,174 +1,160 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link href="/css/landing.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/house.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"s
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/phosphor-icons"></script>
+  </head>
+  <body>
+    <div class="d-flex">
+      <div class="col-sm-2">
+        <div class="sidebar font-dm-sans p-4 text-white">
+          
+          <img src="/images/MAB-LOGO.png"  class="navbar-brand" alt="Mutual Bank Aid logo">
+          <nav class="d-flex flex-column">
+            <a href="#">Dashboard</a>
+            <a href="#">House</a>
+            <a href="#">Profile</a>
+            <a href="/settings" >Settings</a>
+          </nav>
+          <button class="btn btn-sign-out"><a>Sign out</button></a>
+        </div>
+      </div>
+   
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <!-- /* ===== HOUSE + PAYMENT BOX ===== */ -->
 
-</head>
-
-<body>
-    <!-- NAVIGATION BAR + LOGIN/APPLY BUTTONS -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#"><img src="/images/MAB-LOGO.png" width="100px" alt="Mutual Bank Aid logo"></a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <button href="/login" type="button" class="btn btn-flat" >Log in</button>
-                    <button href="/signup" type="button" class="btn btn-flat2">Apply</button>
-                </form>
+      <div class="col-sm-10 content">
+        <header>
+          <h1 class="house-name">House Gardner</h1>
+          <div class="row">
+          <div class="col-sm-10">
+     
+          <div class="payment-bar">
+            <div class="payment-items">
+              <span class="payment-number">$43</span>
+              <span class="payment-title">Current Pool</span>
             </div>
+            <div class="payment-items">
+              <span class="payment-number">01/18/2022</span>
+              <span class="payment-title">Current Cycle Ends</span>
+            </div>
+            <div class="payment-items">
+              <span class="payment-number">5 days</span>
+              <span class="payment-title">Countdown</span>
+            </div>
+            <div class="payment-items">
+              <span class="payment-number">$0</span>
+              <span class="payment-title">Minimum Payment</span>
+            </div>
+          </div>
+        </row>
+
+          <div class="col-lg-12 mt-2 justify-content-center">
+            <div class="deposit-container ">
+              <form action="/depositMoney" class="deposit-form shadow-sm p-3 rounded form-responsive" method="POST">
+                <section>
+                  <label for="money">Deposit amount: </label>
+                  <input name="money" placeholder="$1.00" type="number" class="deposit-input" />
+                </section>
+                <button type="submit" class="btn btn-deposit btn-block"><a>Deposit</button></a>
+              </form>
+            </div>
+          </div>
         </div>
-    </nav>
+        </header>
 
+        <div class="house-info-and-messages">
 
-    <!-- PLACEHOLDER FOR THE IMAGE -->
-    <div class="card-glow h-75">
-        <div class="card-body">
-            <img src="/images/landing-design.png" width="500rem" class="justify-content-center>
-        </div>
-    </div>
+          <!-- /* ==== HOUSE INFORMATION ROW ==== */ -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
+          <div class="house-info">
+            <table class="table table-responsive">
+              <thead>
+                <tr>
+                  <th scope="col">Member</th>
+                  <th scope="col">Contribution</th>
+                  <th scope="col">Payout</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Troi</th>
+                  <td>$50</td>
+                  <td>May 2022</td>
+                  <td><a><button class="btn btn-payout btn-primary">Payout</button></td></a>
+                </tr>
+              
+              </tbody>
+            </table>
+          </div>
+        
+          <!-- === HOUSE MESSAGE BOARD === -->
 
-                <!-- CARD FOR MOTTO, DESCRIPTION OF MBA + FREQUENTLY ASKED QUESTIONS  -->
-                <div class="row">
-                    <div class="col-sm-8">
-
-                        <div class="card mt-5">
-                            <div class="card-body">
-                                <!-- MOTTO + DESCRIPTION OF MBA -->
-                                <h1 class="display-4">Your roadmap to financial freedom</h1>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime debitis explicabo
-                                    eius architecto distinctio deserunt molestiae incidunt vel repellendus, vitae
-                                    nostrum. Iure modi voluptatem laboriosam, aperiam laborum rerum nihil eius!</p>
-
-                                <div class="accordion" id="accordionExample">
-                                <!-- QUESTION ONE -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingOne">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#collapseOne" aria-expanded="true"
-                                                aria-controls="collapseOne">
-                                                What is Mutual Bank Aid?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseOne" class="accordion-collapse collapse show"
-                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                                    Veritatis ab excepturi molestiae corporis? At, excepturi. Voluptate,
-                                                    explicabo corrupti earum, sapiente enim quasi nemo distinctio vel
-                                                    eos modi magnam labore commodi.</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- QUESTION TWO -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingTwo">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                aria-expanded="false" aria-controls="collapseTwo">
-                                                Is Mutual Bank Aid safe to use?
-                                            </button>
-                                        </h2>
-                                        <div id="collapseTwo" class="accordion-collapse collapse"
-                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                                    Veritatis ab excepturi molestiae corporis? At, excepturi. Voluptate,
-                                                    explicabo corrupti earum, sapiente enim quasi nemo distinctio vel
-                                                    eos modi magnam labore commodi.</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- QUESTION THREE -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header" id="headingThree">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                                aria-expanded="false" aria-controls="collapseThree">
-                                                Why choose Mutual Bank Aid over others?
-                                            </button>
-                                        </h2>
-
-                                        <div id="collapseThree" class="accordion-collapse collapse"
-                                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                            <div class="accordion-body">
-                                                <strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                                                    Veritatis ab excepturi molestiae corporis? At, excepturi. Voluptate,
-                                                    explicabo corrupti earum, sapiente enim quasi nemo distinctio vel
-                                                    eos modi magnam labore commodi.</strong>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CUSTOMER STORY CARD -->
-                    <div class="col-sm-4">
-                        <div class="card mt-5 mx-5" style="width: 25rem;">
-                            <img src="/images/customer-story.png" class="justify-content-center">
-                            <div class="card-body">
-                                <h5 class="card-title">Customer’s Story</h5>
-                                <p class="card-text">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="message-board">
+            <h3>Message Board</h3>
+            <!-- <% for(var i=0; i<messages.length; i++) {%> -->
+              
+              <div class="card" style="width: 100%;">
+                <div class="card-body">
+                  <span>
+                    Jeon
+                    <!-- <%= messages[i].name %> -->
+                  </span>
+                  |
+                  <span>
+                    More money for my Starbucks Reserve subscription
+                  </span>
                 </div>
-            </div>
+              </div>
 
-            <!-- FOOTER -->
-            <div class="container">
-                <footer class="py-3 my-4">
-                    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-                        <li class="nav-item"><a class="nav-link" href="#app" >Mobile App</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#company">Company</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#help">Help</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
-                    </ul>
-
-                </footer>
-            </div>
-
+              <div class="card mt-2" style="width: 100%;">
+                <div class="card-body">
+                  <span>
+                    Jeon
+                    <!-- <%= messages[i].name %> -->
+                  </span>
+                  |
+                  <span>
+                    More money for my Starbucks Reserve subscription
+                  </span>
+                </div>
+              </div>
+               <!-- <% } %> -->
+            <form action="/addMessage" method="POST" class="">
+              <div class="input-group mb-3">
+                <input type="text" class="form-control mt-2" placeholder="Send a message...." aria-label="Recipient's username" aria-describedby="basic-addon2" name="msg">
+                <div class="input-group-append">
+                  <button type="submit" class="btn mt-2" type="button"><a><i class="ph-arrow-square-up"></i></button></a>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
+
     </div>
+    <script src="/js/deposit-modal.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 
 </html>
+
+
