@@ -92,11 +92,11 @@ module.exports = {
         "_id": houseId}, {$push: {"members": [{'userId': req.user._id, 'firstName': req.user.firstName, 'lastName': req.user.lastName}]}
       });
       console.log("you've been added to the house!!");
-      res.redirect(`/house/${req.body.houseId}`);
+      // res.redirect("/dashboard");
     } catch (err) {
       console.log('herror is happening');
       console.log(err);
-    }
+    } 
   },
   createHouse: async (req, res) => {
     console.log('hey I am working I am creatting Houses')
@@ -116,7 +116,7 @@ module.exports = {
         members: [{'userId': adminId, 'firstName': req.user.firstName, 'lastName': req.user.lastName}]
       });
       console.log("Profile has been added!");
-      res.redirect("/join");
+      res.redirect("/dashboard");
     } catch (err) {
       console.log(err);
     }

@@ -24,7 +24,7 @@ router.get("/payment-success", houseController.getPaymentSuccess) //route to red
 
 router.get("/join", ensureAuth, houseController.publicHouses);
 router.put("/join", ensureAuth, houseController.joinHouse);
-router.post("/createProfile", upload.single("file"), profileController.createProfile);
+router.post("/createProfile", upload.single("imageUpload"), profileController.createProfile);
 router.post("/newHouse", houseController.createHouse);
 
 ////////////loging routs and this will render the loging and singdup calling the methods getLogin or getSingup from /controllers/auth

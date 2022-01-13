@@ -14,9 +14,12 @@ async function sendHouse(){
             body: JSON.stringify({
                 'houseId': houseId.value
             })
+        }).finally(() => {
+            window.location = "/dashboard"
         })
         const data = await response.json()
         console.log(data)
+        window.location = "/dashboard"
     }catch(err){
         console.log(err)
     }
