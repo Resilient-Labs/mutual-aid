@@ -39,7 +39,7 @@ exports.postLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/dashboard");
+      res.redirect("/dashboard"); // 'req.session.returnTo || ' was removed before '/dashboard'
     });
   })(req, res, next);
 };

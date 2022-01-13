@@ -7,9 +7,9 @@ const houseSchema = new mongoose.Schema({
     ref: "User",
   },
   admin: {
-    type: String,
-    require: true,
-  },houseName: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
+  houseName: {
     type: String,
     require: true,
   },
@@ -29,9 +29,12 @@ const houseSchema = new mongoose.Schema({
     type: Number,
     default: 12,
   },
-  monthlyDues: {
-    type: String,
+  monthlyPaymentAmount: {
+    type: Number,
     require: true,
+  },
+  monthlyPool: {
+    type: Number,
   },
   createdAt: {
     type: Date,

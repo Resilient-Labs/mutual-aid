@@ -1,5 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Profile = require("../models/UserProfile"); 
+const House = require("../models/House")
+var ObjectId = require('mongodb').ObjectID;
 
 module.exports = {
   getProfile: async (req, res) => {
@@ -15,11 +17,15 @@ module.exports = {
   //get dashboard
   getDashboard: async (req, res) => {
     try {
+      console.log(req.user.id)
       const profile = await Profile.find({ user: req.user.id });
+      const houses = await House.find({ members: [ObjectId(req.user.id)] });
+
+      // const house = await House.find({})
       console.log('hello there')
       console.log(profile)
       //Note for DevOps : to render .ejs template it can be 'profile.ejs' or what front-end called 'settings'. This is taking care of rendering the users' profile data comming from the database
-      res.render("dashboard.ejs", { profile: profile, user: req.user });
+      res.render("dashboard.ejs", { profile: profile, houses: houses, user: req.user });
     } catch (err) {
       console.log(err);
     }

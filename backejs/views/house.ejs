@@ -23,12 +23,11 @@
           
           <img src="/images/MAB-LOGO.png"  class="navbar-brand" alt="Mutual Bank Aid logo">
           <nav class="d-flex flex-column">
-            <a href="#">Dashboard</a>
-            <a href="#">House</a>
-            <a href="#">Profile</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/join">Create House</a>
             <a href="/settings" >Settings</a>
           </nav>
-          <button class="btn btn-sign-out"><a href='/logout'>Sign out</a></button>
+          <a href="/logout"><button class="btn-sign-out">Sign out</button></a>
         </div>
       </div>
    
@@ -37,35 +36,38 @@
 
       <div class="col-sm-10 content">
         <header>
-          <h1 class="house-name">House Gardner</h1>
+        <% for(var i=0; i<house.length; i++) {%>
+          <h1 class="house-name">House <%= house[i].houseName.charAt(0).toUpperCase() + house[i].houseName.slice(1) %></h1>
           <div class="row">
           <div class="col-sm-10">
      
           <div class="payment-bar">
             <div class="payment-items">
-              <span class="payment-number">$43</span>
+              <span class="payment-number"><%= house[i].monthlyPaymentAmount %></span>
               <span class="payment-title">Current Pool</span>
             </div>
             <div class="payment-items">
-              <span class="payment-number">01/18/2022</span>
+              <span class="payment-number"><%= paymentDate %></span>
               <span class="payment-title">Current Cycle Ends</span>
             </div>
             <div class="payment-items">
-              <span class="payment-number">5 days</span>
+              <span class="payment-number"><%= countDown %></span>
               <span class="payment-title">Countdown</span>
             </div>
             <div class="payment-items">
-              <span class="payment-number">$0</span>
+              <span class="payment-number"><%= house[i].monthlyPaymentAmount %></span>
               <span class="payment-title">Minimum Payment</span>
             </div>
           </div>
-        </row>
+        <!-- </row> -->
 
           <div class="col-lg-12 mt-2 justify-content-center">
             <div class="deposit-container ">
               <form action="/create-checkout-session" class="deposit-form shadow p-3 mb-5 bg-white rounded" method="POST">
                 <label for="paymentAmount">Deposit amount:</label>
                 <input name="paymentAmount" placeholder="$50" type="number" step="0.01" required>
+                <input name="houseID" type="text" value="<%= house[i]._id %>" hidden>
+                <input name="userName" type="text" value="<%= user.firstName %>" hidden>
                 <button type="submit" class="btn btn-dark btn-sm">Deposit</button>
               </form>
                 </div>
@@ -88,13 +90,16 @@
                 </tr>
               </thead>
               <tbody>
+                <% for(var i=0; i<house.length; i++) {%>}
+                  <% for(var m=0; m<house[i].members.length; m++) {%>}
                 <tr>
-                  <th scope="row">Troi</th>
-                  <td>$50</td>
+                  <th scope="row"><%= house[i].members[m].firstName %></th>
+                  <td>$10</td>
                   <td>May 2022</td>
                   <td><a><button class="btn btn-payout btn-primary">Payout</button></td></a>
                 </tr>
-              
+                  <%}%>
+                <%}%>
               </tbody>
             </table>
           </div>
@@ -103,10 +108,11 @@
 
           <div class="message-board">
             <h3>Message Board</h3>
-            <ul class="messages">
-              <% for(var i=0; i<messages.length; i++) {%>
+            <ul class="mejsagej">
+j              <% for(var i=0; i<messages.length; i++) {%>
                 <li class="message">
-                  <span><%= messages[i].message %></span>
+j                  <span><%= messages[i].message %></span>
+j                  <span><%= messages[i].message %></span>
                   <span class="fa-trash">trash</span>
                 </li>
               <% } %>
@@ -114,18 +120,6 @@
                                 
                   <span class="fa-trash">trash</span>
                   <span><i class="fa fa
-                  <span>
-                    Jeon
-                  </span>                  |
-                  <span>
-                    More money for my Starbucks Reserve subscription
-                  </span>
-            
-                  </span>
-                  |
-                  <span>
-                    More money for my Starbucks Reserve subscription
-                  </span>
                 </div>
               </div>
 
@@ -148,6 +142,8 @@
                 <div class="input-group-append">
                   <button type="submit" class="btn mt-2" type="button"><a><i class="ph-arrow-square-up"></i></button></a>
                 </div>
+                <!--  close for the for loop on line 40-->
+        <%}%> 
               </div>
             </form>
           </div>

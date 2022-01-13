@@ -26,11 +26,10 @@
               <img src="/images/MAB-LOGO.png" alt="Mutual Bank Aid logo">
               <nav class="d-flex flex-column">
                 <a href="/dashboard">Dashboard</a>
-                <a href="/house">House</a>
-                <a href="/profile">Profile</a>
+                <a href="/join">Create House</a>
                 <a href="/settings">Settings</a>
               </nav>
-              <button class="btn-sign-out"><a href="/signout">Sign out</button></a>
+              <a href="/logout"><button class="btn-sign-out">Sign out</button></a>
             </div>
           </div>
 
@@ -83,20 +82,17 @@
             <!-- ===== CURRENT HOUSE + BANK INFO ===== -->
             <div class="d-flex mt-3">
               <div class="col">
+                <% for(var i=0; i<houses.length; i++) {%>
                 <div class="house-box mx-5 mt-5">
-
                   <p class="fw-bold">
-                    Current House: <span class="fw-normal">{house}</span>
+                    Current House: <span class="fw-normal"><a href="/house/<%= houses[i]._id %>"><%= houses[i].houseName %></a></span>
                   </p>
                   <p class="fw-bold">
                     Minimum amount due for {duedate}:
-                    <span class="fw-normal">${shmoneydue}</span>
-                  </p>
-                  <p class="fw-bold">
-                    Big schmoney month:
-                    <span class="fw-normal">{shmoneydate}</span>
+                    <span class="fw-normal">{due}</span>
                   </p>
                 </div>
+                <% }%>
               </div>
               <div class="col">
                 <div>

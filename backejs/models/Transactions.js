@@ -5,6 +5,10 @@ const TransactionsSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  houseId: {
+    type: String,
+    require: true
+  },
   payment: {
     type: Number,
     require: true,

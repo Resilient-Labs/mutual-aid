@@ -13,10 +13,11 @@ router.get("/", homeController.getIndex);
 router.get("/dashboard", ensureAuth, usersProfileController.getDashboard); //note for DevOps: here we are calling the method getProfile from the controllers the route was name /profile as a plaseholder but it can be /settings because this will render users settings form.
 router.get("/settings", ensureAuth, usersProfileController.getSettings)
 
-router.get("/house", ensureAuth, houseController.getHouse);
-router.post('/house/messages', ensureAuth, houseController.createMessage) /
+router.get('/house/:zebra', ensureAuth, houseController.getHouse)
 // message board routes
+router.post('/house/messages', ensureAuth, houseController.createMessage) 
 router.delete('/house/messages', ensureAuth, houseController.deleteMessage)
+
 router.post("/create-checkout-session", houseController.getCheckout); //stripe API route
 router.get("/payment-success", houseController.getPaymentSuccess) //route to redirect from successful payment
 
