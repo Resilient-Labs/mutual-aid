@@ -4,7 +4,7 @@
 Mutual Aid is a fullstack application designed to help communities invest in one another and build communal wealth. It does not try to solve community issues, but rather provides tools to already-existing solutions that come from the communities. 
 
 
-## Features
+## Overview of Features
 Users will be able to log in and sign up for a free account. Once an account has been created, they will be able to specify whether they want to join a house or create a house. A house has a capacity of 12 people. Within the house, a user gets assigned a random number from 1-12. 
  
 
