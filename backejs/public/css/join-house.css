@@ -1,0 +1,78 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.css);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
+.card {
+  font-family: 'Josefin Sans', 'Arial', sans-serif;
+  color: black;
+  border-radius: 1rem !important;
+  margin-top: .8rem !important;
+}
+
+.existing-houses{
+  margin-top: .8rem !important;
+
+}
+
+.card-header {
+  background: #051d40 !important;
+  color: whitesmoke !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding-top: 1.5rem !important;
+}
+
+.privacy-message {
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.login-btn,
+.join-house-btn {
+  background: #fd871b !important;
+  color: whitesmoke !important;
+}
+
+
+/* sidebar */
+nav a {
+  color: #051D40 !important;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: "DM Sans", Helvetica;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #000000 !important;
+}
+ 
+.sidebar {
+  background-color: #C5D5E4 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: -3%;
+  position: relative;
+  text-align: center;
+}
+
+.btn-sign-out {
+  align-self: center;
+  background-color: rgb(226 232 240) ;
+  border: none;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-size: clamp(.5rem, 2.5vw, 1.25rem); 
+  margin-top: clamp(4rem, 5vw, 8rem); 
+  padding: 4px 8px;
+  width: 75%;
+}
+
+.btn-sign-out:hover {
+  background-color: #FD871B;
+  color: #FFFFFC;
+  text-decoration: none !important;
+}

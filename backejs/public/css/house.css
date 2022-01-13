@@ -1,0 +1,214 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
+
+nav a{
+  color: #051D40;
+}
+
+.content {
+  background: #F4F6FD;
+  padding-left: 2rem;
+}
+
+header {
+  background: #051D40;
+  border-radius: 32px;
+  padding: 32px;
+  margin: 16px 0;
+  color: white;
+}
+
+.house-name {
+  font-family: 'Josefin Sans', 'Arial', sans-serif;
+  font-size: clamp(2rem, 4vw, 5rem);
+  line-height: 1;
+  color: WHITE;
+}
+
+.payment-bar {
+  display: flex;
+  align-items: center;
+}
+
+.payment-items {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.payment-number {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FCC03E;
+}
+
+.payment-title {
+  font-size: 16px;
+}
+
+/* .deposit-form {
+  align-items: flex-end;
+  color: #FFF;
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  width: 85%;
+}
+
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+td{
+  margin-top: 2em !important;
+}
+.btn{
+  color: #083070 !important;
+  background-color: #FCC03E !important;
+  font-weight: bold !important;
+  height: 2.5rem !important;
+  text-transform: uppercase !important;
+}
+.btn-deposit{
+  margin-top: 1rem !important;
+  margin-left: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.btn-payout{
+  height: 2.5rem !important;
+  border: none !important;
+}
+
+/* HOUSE INFO AND MESSAGEBOARD */
+
+.house-info-and-messages {
+  display: flex;
+  gap: 2rem;
+}
+
+.house-info {
+  width: 50%;
+}
+/* Sidebar */
+nav a {
+  color: #051D40;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
+.sidebar {
+  background-color: #C5D5E4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: -3%;
+  position: relative;
+  text-align: center;
+}
+
+.btn-sign-out {
+  align-self: center;
+  background-color: rgb(226 232 240);
+  border: none;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-size: clamp(.5rem, 2.5vw, 1.25rem); 
+  margin-top: clamp(4rem, 5vw, 8rem); 
+  padding: 4px 8px;
+  width: 75%;
+}
+
+.btn-sign-out:hover {
+  background-color: #FD871B;
+  color: #FFFFFC;
+  text-decoration: none !important;
+}
+
+t-form {
+  color: #36454F;
+  background-color: #FFFFFC;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  width: 25%;
+}
+
+.message-board{
+  border: 2px solid #051D40 !important;
+  padding: 2em;
+  border-radius: 8px;
+
+}

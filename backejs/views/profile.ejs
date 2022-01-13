@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/profile.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+
+    <!-- ==== SIDEBAR ==== -->
+    <div>
+      <div class="d-flex">
+          <div class="col-sm-2">
+            <div class="sidebar font-dm-sans p-4 text-white">
+              <img src="/images/MAB-LOGO.png" alt="Mutual Bank Aid logo">
+              <nav class="d-flex flex-column">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/join">Create or Join House</a>
+                <a href="/settings">Settings</a>
+              </nav>
+              <a href="/logout"><button class="btn-sign-out">Sign out</button></a>
+            </div>
+          </div>
+
+          <!-- ==== BIO, INTERESTS + GOALS SECTION ==== -->
+          <div class="col-sm-10 content">
+            <div class="row-mb-3 mx-2">
+              <div class="welcome-box flex-column justify-content-center align-items-between p-1 py-4 px-6 mx-3">
+                <div class="welcome-summary d-flex justify-content-between align-items-center pb-3 mx-3">
+                  <div class="welcome-box-left d-flex align-items-center">
+                    <img
+                      class="profile-pic"
+                      src="https://res.cloudinary.com/resilientcoders-org/image/upload/c_fit,h_300,w_255/dpr_2.0/v1638422713/marcos_kt52bi.png"/>
+                      <h1 class="my-1 text-white h5">{name}</h1>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-around text-white mt-1">
+                  <div>
+                    <h6 class="mb-0">Bio</h6>
+                    <p class="mb-0">{bio}</p>
+                  </div>
+                  <div>
+                    <h6 class="mb-0">Goals</h6>
+                    <p class="mb-0">{goals}</p>
+                  </div>
+                  <div>
+                    <h6 class="mb-0">Interests</h6>
+                    <p class="mb-0">{interests}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- ===== HOUSE CARDS ===== -->
+
+            <div class="card-group mt-5 mx-3">
+                <div class="card mx-1">
+                  <img src="/images/G.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="/gardner">Gardner</h5></a>
+                    <p class="card-text">11/12 members — <i>1 slot remaining</i></p>
+                  </div>
+                </div>
+
+                <div class="card mx-1">
+                  <img src="/images/C.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="/cass">Cass</h5></a>
+                    <p class="card-text">9/12 members — <i>3 slots remaining</i></p>
+                  </div>
+                </div>
+
+                <div class="card mx-1">
+                  <img src="/images/H.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="/hayden">Hayden</h5></a>
+                    <p class="card-text">12/12 members — <i>closed cycle</i></p>
+                  </div>
+                </div>
+
+                <div class="card mx-1">
+                    <img src="/images/M.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><a href="/moses">Moses</h5></a>
+                      <p class="card-text">10/12 members — <i>2 slots remaining</i></p>
+                    </div>
+                  </div>
+              </div>
+              
+
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+

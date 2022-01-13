@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
+/* Josh W. Corneau CSS Reset (with adjustments) */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application and set default font size
+*/
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+/* Utility Classes */
+.font-inter {
+  font-family: 'Inter', 'Helvetica', sans-serif;
+}
+.font-dm-sans {
+  font-family: 'DM Sans', 'Helvetica', sans-serif;
+}
+/* Dashboard */
+#dashboard-container {
+  max-width: 1800px;
+}
+.profile-pic {
+  border: 4px solid #ffffff;
+  border-radius: 100%;
+  box-shadow: 5px -5px 52px 0px #99acb5;
+  height: 4.5rem;
+  margin-right: 2rem;
+  width: 4.5rem;
+}
+.upload-pic {
+  border: 4px solid #ffffff;
+  border-radius: 100%;
+  box-shadow: 5px -5px 52px 0px #99acb5;
+  margin-right: 2rem;
+}
+.welcome-box {
+  background: #003090;
+  border-radius: 0 0 12px 12px;
+  display: flex;
+  padding: 2em 8em;
+}
+.house-box {
+  border-radius: 8px;
+  padding: 2rem;
+  background: #003090;
+}
+.bank-card {
+  background: #cce7ce;
+  border: 2px solid #cce7ce;
+  border-radius: 6px;
+  height: 219.53px;
+  margin: 0 auto;
+  width: 311px;
+}
+
+.profile-card {
+  background: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 6px;
+  height: 100%;
+  margin: 0 auto;
+  width: 311px;
+}
+.welcome-summary {
+  border-bottom: 2px solid white;
+}
+/* === SIDEBAR === */
+nav a {
+  color: #051d40;
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 500;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+nav a:hover {
+  color: #000000;
+}
+.sidebar {
+  background-color: #c5d5e4;
+  display: flex;
+  flex-direction: column;
+  flex-align: center;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+}
+.btn-sign-out {
+  align-self: center;
+  background-color: rgb(226 232 240);
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(0.5rem, 2.5vw, 1.25rem);
+  margin-top: clamp(4rem, 5vw, 8rem);
+  padding: 4px 8px;
+  width: 75%;
+}
+.btn-sign-out:hover {
+  background-color: rgb(200 24 0);
+  color: #fffffc;
+}
+/* Settings */
+.btn-save-settings {
+  background-color: #003090;
+}
+/* input {
+  opacity: 0;
+  position: relative;
+  left: -100px;
+} */
+/* login */
+
+nav a {
+  color: #051d40;
+  font-size: 1.25rem;
+  font-weight: 500;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
+.sidebar {
+  background-color: #c5d5e4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: -3%;
+  position: relative;
+  text-align: center;
+}
+
+.btn-sign-out {
+  color: #083070 !important;
+  
+  align-self: center;
+  background-color: #fcc03e;
+  border: none;
+  text-decoration: none !important;
+  border-radius: 4px;
+  font-size: clamp(0.5rem, 2.5vw, 1.25rem);
+  margin-top: clamp(4rem, 5vw, 8rem);
+  padding: 4px 8px;
+  width: 75%;
+  
+  
+  height: 40px;
+}
+
+/* .btn-sign-out {
+  border: none !important;
+  background-color: #fcc03e !important;
+  font-weight: bold !important;
+  height: 2.5rem !important;
+} */
+
+.btn-sign-out:hover {
+  background-color: #fd871b;
+  color: #fffffc;
+  text-decoration: none !important;
+}
+
+.welcome-box {
+  font-family: 'Josefin Sans', 'Arial', sans-serif;
+  background: #051d40;
+  border-radius: 32px;
+  padding: 32px;
+  margin: 16px 0;
+  color: white;
+}
+
+.user-details {
+  color: #fcc03e;
+}
+
+input[type='file'] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.setting-card {
+  width: 100%;
+  max-width: 500px;
+}
+
+.questionmark {
+  height: 12px;
+  display: inline-block;
+}
+
+/* ================================== */
+nav a {
+  color: #051D40 !important;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: "DM Sans", Helvetica;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #000000 !important;
+}
+ 
+.sidebar {
+  background-color: #C5D5E4 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: -3%;
+  position: relative;
+  text-align: center;
+}
+
+.btn-sign-out {
+  align-self: center;
+  background-color: rgb(226 232 240) ;
+  border: none;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-size: clamp(.5rem, 2.5vw, 1.25rem); 
+  margin-top: clamp(4rem, 5vw, 8rem); 
+  padding: 4px 8px;
+  width: 75%;
+}
+
+.btn-sign-out:hover {
+  background-color: #FD871B;
+  color: #FFFFFC;
+  text-decoration: none !important;
+}

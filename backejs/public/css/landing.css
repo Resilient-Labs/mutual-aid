@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
+
+.btn-link {
+  color: #FCC03E !important;
+}
+
+h1{
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+}
+
+.navbar{
+  background-color: #C5D5E4 !important;
+}
+
+.navbar-collapse.btn{
+display: block;
+}
+
+.accordion-item {
+  color: #051D40 !important;
+  margin: 2em 0 !important;
+}
+
+.accordion-button.collapsed {
+  background-color: #051D40 !important;
+  color: #ffffff !important;
+}
+.accordion-button:not(.collapsed) {
+background-color: #051D40 !important;
+color: #FCC03E !important;
+}
+
+.accordion-button.toggle {
+  color: #051D40 !important;
+}
+
+.btn-flat {
+  background-color: #051D40 !important;
+  color: #051D40 !important;
+  font-size: 0.8em !important;
+  margin-right: 1em !important;
+  text-transform: uppercase;
+  width: 8em;
+}
+
+a {
+  color: #FCC03E !important;
+  text-decoration: none !important;
+}
+
+.btn-flat2 {
+  background-color: #051D40 !important;
+  color: #FCC03E !important;
+  font-size: 0.8em !important;
+  text-transform: uppercase;
+  margin-left: 5px;
+  width: 8em;
+
+}
+
+.btn-md {
+  font-size: 0.8em !important;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+  padding: 1rem 1.5rem;
+}
+
+.col {
+  margin-right: 8em !important;
+}
+
+.card-title {
+  color: #051D40 !important;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+}
+
+.card-glow{
+  background-color: #C5D5E4;
+  margin: auto;
+}
+
+.display-4 {
+    color: #051D40 !important;
+}
+
+.footer {
+  color: #051D40 !important;
+  height: 200px;
+  position: relative;
+  top: 150px;
+  left: 90px;
+  float: left;
+  width: 90%;
+  text-align: center;
+}
+
+.footerItem {
+  color: black;
+}
+
+.card-img-top {
+  height: 15rem;
+  margin: auto;
+}
+
+.img-fluid{
+  position: center;
+  margin-top: -3%;
+}
+
+.nav {
+  background-color: white !important;
+}
+
+.nav-link {
+  color: #051D40 !important;
+  font-size: 1em !important;
+  font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
+  padding: 0 2em !important;
+}
+
+.placeholder {
+  background-color: #003090 !important;
+}
+
+
