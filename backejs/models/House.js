@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 //profile schemma
 const houseSchema = new mongoose.Schema({
   user: {
