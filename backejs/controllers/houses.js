@@ -1,24 +1,38 @@
 const House = require("../models/House"); 
+const Profile = require("../models/UserProfile"); 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 const Transactions = require("../models/Transactions"); 
 const Messages = require("../models/Messages"); 
 const { now } = require('moment');
-const moment = require('moment');  
+const moment = require('moment');
+var ObjectId = require('mongodb').ObjectID;
 // const { get } = require('../models/house');
 
 
 module.exports = {
   getHouse: async (req, res) => {
-    function getHouseStartDate(){
-      return new moment('2022-02-12T03:24:00')
-    }
+
+    let houseId = ObjectId(req.params.zebra) //this is house id
+    
     try {
+      const house = await House.find({_id: houseId})
+      const messages = await Messages.find()
+      const profile = await Profile.find({ user: req.user.id });
+
+      let startDate = null
+      let momentStartDate = null
       let paymentDate = null
-      const startDate = getHouseStartDate()
+      console.log(house)
+      for(var i=0; i<house.length; i++){
+        startDate = new Date(house[i].startDate)
+        momentStartDate = moment().date(startDate.getFullYear())
+      }
       const currentDate = moment()
       
+      console.log('line 32', startDate)
       if(currentDate.isAfter(startDate)){
-        const dayOfMonth = startDate.date()
+        console.log('current date is after start date')
+        const dayOfMonth = startDate.getDate()
         paymentDate = moment().date(dayOfMonth)
         if (paymentDate.isBefore(currentDate)){
           console.log('payment date is before currentDate')
@@ -28,7 +42,7 @@ module.exports = {
       else{
         paymentDate = startDate
       }
-      let endOfCycle = startDate.add(1, 'year')
+      let endOfCycle = momentStartDate.add(1, 'year')
       let cycleOver = false
       if(paymentDate.isAfter(endOfCycle)){
         countDown = 0
@@ -37,17 +51,21 @@ module.exports = {
       let millisecondsPerDay = 86400 * 1000
       let countDown = Math.floor((paymentDate - currentDate) / millisecondsPerDay)
       
-      console.log('when does the cycle end? answer:', endOfCycle, 'is the cycle curently over? a:',cycleOver)
-      console.log('countDown:', countDown, 'startDate', startDate, 'payment date:', paymentDate, 'curentDate', currentDate)      //getting millisecs between the two dates (86,400 x 1000 = ms in a day)
+      console.log('when does the cycle end?', endOfCycle, 'is the cycle over?',cycleOver)
+      console.log('countDown:', countDown, 'startDate', startDate, 'endOfCycle', endOfCycle, 'payment date', paymentDate, 'curentDate', currentDate)      //getting millisecs between the two dates (86,400 x 1000 = ms in a day)
+      console.log('USER', req.user)
 
       res.render("house.ejs", {
+      user: req.user.firstName,
+      house: house,
       endOfCycle,
       countDown,
       cycleOver,
-      startDate: startDate.format('MM/DD/YYYY'),
+      startDate: moment(startDate).format('MM-DD-YYYY'),
       currentDate,
-      paymentDate: paymentDate.format('MM/DD/YYYY'),
-      });
+      paymentDate: moment(paymentDate).format('MM-DD-YYYY'),
+      //messages: messages
+      }); 
     } catch (err) {
       console.log('herror is happening')
       console.log(err);
@@ -66,16 +84,18 @@ module.exports = {
     console.log('hey I am working I am creatting Houses')
     try {
     
-
+      let adminId = ObjectId(req.user.id)
+    
       await House.create({
-        user: req.user.id,
+        admin: adminId,
         houseName: req.body.houseName,
-        startDate:req.body.startDate,
-        endDate:req.body.endDate,
-        monthlyDueDate:req.body.monthlyDueDate,
-        amountOfMembers:req.body.amountOfMembers,
-        monthlyPaymentAmount:req.body.monthlyPaymentAmount,
-
+        startDate: req.body.startDate,
+        endDate: req.body.endDate,
+        monthlyDueDate: req.body.monthlyDueDate,
+        amountOfMembers: req.body.amountOfMembers,
+        monthlyPaymentAmount: req.body.monthlyPaymentAmount,
+        monthlyPool: 0,
+        members: [{'userId': adminId, 'firstName': req.user.firstName, 'lastName': req.user.lastName}]
       });
       console.log("Profile has been added!");
       res.redirect("/join");
@@ -106,7 +126,8 @@ module.exports = {
             price_data: {
               currency: 'usd',
               product_data: {
-                name: 'mutual aid payment'
+                name: 'mutual aid payment',
+                metadata: {'house_id': req.body.houseID }
               },
               unit_amount: req.body.paymentAmount * 100,
               
@@ -114,7 +135,7 @@ module.exports = {
             quantity: 1
             }
           ],
-          success_url: `${process.env.SERVER_URL}/payment-success?amount=${req.body.paymentAmount}`,
+          success_url: `${process.env.SERVER_URL}/payment-success?amount=${req.body.paymentAmount}&houseid=${req.body.houseID}`,
           cancel_url: `${process.env.SERVER_URL}/cancel.html`
         })
         res.redirect(session.url)
@@ -130,9 +151,10 @@ module.exports = {
         Transactions.create({
           user: req.user.id,
           payment: req.query.amount,
+          houseId: req.query.houseid,
           paidOn: Date.now()
         })
-        res.redirect('/house')
+        res.redirect('/house/' + req.query.houseid)
       } catch (e){
         res.status(500).json({error:e.message})
         console.log('db save error')
