@@ -19,22 +19,22 @@
         <a href="/">
           <img src="images/MAB-LOGO.png" alt="Mutual Aid Bank logo" class="logo">
         </a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#" class="hidden">About</a>
+        <a href="#" class="hidden">Contact</a>
       </div>
       <div>
-        <a href="/login" class="btn-nav-login">Log In</a>
+        <a href="/login" class="btn-nav-login hidden">Log In</a>
         <a href="/signup" class="btn-nav-apply">Apply</a>
       </div>
     </nav>
 
-    <div class="container flex justify-around mt-5">
+    <div class="container flex justify-around my-3 mobile-container">
 
       <div class="login-copy">
         <div>
           <h1>Welcome back!</h1>
           <p>Bagheera missed you a whole lot.</p>
-          <img src="images/bagheera-sad.jpeg" alt="Sad Bagheera with puppy eyes :(" class="img-bagheera"> 
+          <img src="images/bagheera-sad.png" alt="Sad Bagheera with puppy eyes :(" class="img-bagheera"> 
         </div>
       </div>
 
@@ -44,11 +44,11 @@
             <label class="form-title" for="email">Email</label>
             <div class="input-box">
               <div>
-                <i class="fas fa-align-left"></i>
+                <i class="fas fa-envelope"></i>
               </div>
               <input name="email" type="email" placeholder="bagheera@hotmail.com" required />
             </div>
-            <p class="text-muted my-2 privacy-message">
+            <p class="my-2 privacy-message">
               We'll never share your email with anyone else.
             </p>
           </div>

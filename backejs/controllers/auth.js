@@ -72,7 +72,7 @@ exports.postSignup = (req, res, next) => {
     validationErrors.push({
       msg: "Password must be at least 8 characters long",
     });
-    
+
   // if (req.body.password !== req.body.confirmPassword)
   //   validationErrors.push({ msg: "Passwords do not match" });
 
@@ -93,7 +93,7 @@ exports.postSignup = (req, res, next) => {
   });
 
   User.findOne(
-    { $or: [{ email: req.body.email }, { firstName: req.body.firstName }] },
+    { email: req.body.email },
     (err, existingUser) => {
       if (err) {
         return next(err);
@@ -101,7 +101,7 @@ exports.postSignup = (req, res, next) => {
       if (existingUser) {
         console.log(existingUser)
         req.flash("errors", {
-          msg: "Account with that email address or username already exists.",
+          msg: "Account with that email address already exists.",
         });
         return res.redirect("../signup");
       }

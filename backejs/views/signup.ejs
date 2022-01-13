@@ -19,22 +19,22 @@
         <a href="/">
           <img src="images/MAB-LOGO.png" alt="Mutual Aid Bank logo" class="logo">
         </a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#" class="hidden">About</a>
+        <a href="#" class="hidden">Contact</a>
       </div>
       <div>
-        <a href="/login" class="btn-nav-login">Log In</a>
+        <a href="/login" class="btn-nav-login hidden">Log In</a>
         <a href="/signup" class="btn-nav-apply">Apply</a>
       </div>
     </nav>
 
-    <div class="container flex justify-around mt-5">
+    <div class="container flex justify-around my-2">
 
       <div>
-      <div class="signup-copy">
-        <h1>Join our large community of folks for free!</h1>
-      </div>
-        <form action="/signup" method="POST">
+        <div class="signup-copy">
+          <h1>Join our large community of folks for free!</h1>
+        </div>
+        <form action="/signup" method="POST" class="signup-form">
           <!-- NAMES -->
           <div class="name-inputs">
             <div>
@@ -56,9 +56,6 @@
           <div>
             <label class="form-title" for="pronouns">Pronouns (Optional)</label>
             <div class="input-box">
-              <div>
-                <i class="fas fa-envelope"></i>
-              </div>
               <input name="pronouns" type="text" placeholder="He/Him/Bark" />
             </div>
           </div>
@@ -71,13 +68,13 @@
               </div>
               <input name="email" type="email" placeholder="bagheera@hotmail.com" required />
             </div>
-            <p class="text-muted my-2 privacy-message">
+            <p class="my-2 privacy-message">
               We'll never share your email with anyone else.
             </p>
           </div>
 
           <!-- PASSWORD -->
-          <div class="mb-3 mt-3">
+          <div>
             <label class="form-title" for="password">Password <span>*</span>(min 8 characters)</label>
             <div class="input-box">
               <div>
@@ -87,7 +84,7 @@
             </div>
           </div>
 
-          <button class="login-btn" type="submit">Apply</button>
+          <button class="apply-btn" type="submit">Sign up</button>
         </form>
       </div> 
       <!-- END OF SIGNUP FORM -->

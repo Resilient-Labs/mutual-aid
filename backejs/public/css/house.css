@@ -46,9 +46,8 @@ header {
   font-size: 16px;
 }
 
-.deposit-form {
+/* .deposit-form {
   align-items: flex-end;
-  border: 2px dashed #222;
   color: #FFF;
   font-size: 1.25rem;
   font-weight: 600;
@@ -56,6 +55,74 @@ header {
   width: 85%;
 }
 
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
+ */
 td{
   margin-top: 2em !important;
 }
@@ -69,6 +136,9 @@ td{
 .btn-deposit{
   margin-top: 1rem !important;
   margin-left: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
 
 .btn-payout{
@@ -76,15 +146,6 @@ td{
   border: none !important;
 }
 
-.btn-sign-out{
-  color: #083070 !important;
-  border: none !important;
-  background-color: #FCC03E !important;
-  font-weight: bold !important;
-  height: 2.5rem !important;
-  text-transform: uppercase !important;
-
-}
 /* HOUSE INFO AND MESSAGEBOARD */
 
 .house-info-and-messages {
@@ -136,8 +197,7 @@ nav a:hover {
   text-decoration: none !important;
 }
 
-=======
-.deposit-form {
+t-form {
   color: #36454F;
   background-color: #FFFFFC;
   display: flex;
@@ -146,3 +206,9 @@ nav a:hover {
   width: 25%;
 }
 
+.message-board{
+  border: 2px solid #051D40 !important;
+  padding: 2em;
+  border-radius: 8px;
+
+}

@@ -132,9 +132,20 @@ h1 {
   margin-bottom: 1rem !important;
 }
 .signup-copy h1 {
+  font-size: 3rem !important;
   margin: auto;
   text-align: center;
   width: 75%;
+}
+.login-form, .signup-form {
+  background: rgba( 255, 255, 255, 0.2 );
+  border-radius: 8px;
+  margin: auto;
+  padding: 20px;
+  width: 75%;
+}
+.login-form {
+  width: 50%;
 }
 .img-bagheera {
   border: 6px solid #FFF;
@@ -148,6 +159,8 @@ h1 {
 .form-title {
   font-size: 1.75rem;
   font-weight: 600;
+  color: #1E293B;
+  margin-top: 8px;
   margin-bottom: 12px;
 }
 .input-box {
@@ -165,14 +178,17 @@ h1 {
 }
 .name-inputs {
   display: flex;
+  gap: 2rem;
 }
-
+.name-inputs > div {
+  width: 50%;
+}
 .privacy-message {
+  color: #6c757d;
   font-family: 'Montserrat', 'Arial', sans-serif;
-  font-weight: 500;
   font-size: 0.75rem;
+  font-weight: 500;
 }
-
 .login-btn {
   background: #003090;
   border: none;
@@ -184,4 +200,75 @@ h1 {
   font-weight: 600;
   margin-top: 1rem;
   padding: .5rem 1rem;
+}
+.login-btn:hover {
+  background-color: #1152cc;
+  transition: background-color .5s;
+}
+.login-copy {
+  width: 50%;
+}
+.apply-btn {
+  background: #F59E0B;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  color: #FFF;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: .5rem 1rem;
+}
+.apply-btn:hover, .btn-nav-apply:hover {
+  background: rgb(241, 176, 62);
+  transition: background-color .5s;
+}
+
+@media all and (max-width: 1000px) {
+  .hidden {
+    display: none !important;
+  }
+  .signup-copy h1{
+    font-size: 2.25rem !important;
+  }
+  .signup-form {
+    padding: none;
+    width: 100%;
+  }
+  .name-inputs {
+    display: block;
+  }
+  .name-inputs > div {
+    width: 100%;
+  }
+  .privacy-message {
+    color: #FFF;
+  }
+
+  /* === LOGIN PAGE === */
+  .bg-moneyhill {
+    height: 100vh;
+  }
+  .mobile-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-copy {
+    width: 100%;
+  }
+  .login-form {
+    margin-top: 1rem;
+    padding: none;
+    width: 100%;
+  }
+  .login-copy h1, .login-copy p {
+    text-align: center;
+  }
+  .img-bagheera {
+    height: 200px;
+    display: block;
+    float: none;
+    margin: auto;
+  }
 }

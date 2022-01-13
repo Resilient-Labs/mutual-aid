@@ -6,7 +6,7 @@ const TransactionsSchema = new mongoose.Schema({
   //   ref: "User",
   // },
   paidBy: {
-    type:String,
+    type: String,
     require: true
   },
   house: {
@@ -21,6 +21,9 @@ const TransactionsSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  houseName: {
+    type: String,
+  }
 });
 
 

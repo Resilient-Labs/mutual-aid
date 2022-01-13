@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mutual Aid Bank</title>
+    <title>Join</title>
     <link rel="stylesheet" href="/css/join-house.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <link
@@ -15,167 +15,179 @@
     />
   </head>
   <body>
-    <h1>sddjdj</h1>
-    <nav class="font-dm-sans">
-      <div class="nav-pages">
-        <a href="/">
-          <img
-            src="/images/MAB-LOGO.png"
-            alt="Mutual Aid Bank logo"
-            class="logo"
-          />
-        </a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </div>
-      <div>
-        <a href="/login" class="btn-nav-login">Log In</a>
-        <a href="/signup" class="btn-nav-apply">Apply</a>
-      </div> 
-    </nav>
-
-    <!-- ==== New House ==== -->
-    <div class="container">
-      <div class="row justify-content-around mt-5">
-        <div class="col-12 col-md-8 col-lg-5">
-          <div class="card">
-            <div class="card-header">
-              <h1 class="m-0 h2">Create a new house</h1>
-            </div>
-            <div class="card-body">
-              <form action="/newHouse" method="POST">
-                <div class="mb-1 mt-0" controlId="formBasicEmail">
-
-                <div
-                  class="mb-3 mt-3 d-flex flex-column"
-                  controlId="formBasicPassword"
-                >
-                  <label>House Name</label>
-                  <div class="input-group pt-2">
-                    <div class="input-group-text" id="basic-addon1">
-                      <i class="fas fa-lock"></i>
-                    </div>
-                    <input
-                      class="form-control"
-                      name="houseName"
-                      type="text"
-                      placeholder="Strawberry Mansion"
-                    />
-                  </div>
-                </div>
-
-                <div
-                  class="mb-3 mt-3 d-flex flex-column"
-                  controlId="formBasicPassword"
-                >
-                  <label>Start Date</label>
-                  <div class="input-group pt-2">
-                    <div class="input-group-text" id="basic-addon1">
-                      <i class="fas fa-lock"></i>
-                    </div>
-                    <input class="form-control" name="startDate" type="date" />
-                  </div>
-                </div>
-
-                <div
-                  class="mb-3 mt-3 d-flex flex-column"
-                  controlId="formBasicPassword"
-                >
-                  <label>End Date</label>
-                  <div class="input-group pt-2">
-                    <div class="input-group-text" id="basic-addon1">
-                      <i class="fas fa-lock"></i>
-                    </div>
-                    <input class="form-control" name="endDate" type="date" />
-                  </div>
-                </div>
-
-                <div
-                  class="mb-3 mt-3 d-flex flex-column"
-                  controlId="formBasicPassword"
-                >
-                  <label>Monthly Due Date</label>
-                  <div class="input-group pt-2">
-                    <div class="input-group-text" id="basic-addon1">
-                      <i class="fas fa-lock"></i>
-                    </div>
-                    <input
-                      class="form-control"
-                      name="monthlyDueDate"
-                      type="date"
-                    />
-                  </div>
-                </div>
-
-                <div
-                  class="mb-3 mt-3 d-flex flex-column"
-                  controlId="formBasicPassword"
-                >
-                  <label>Member Count</label>
-                  <div class="input-group pt-2">
-                    <div class="input-group-text" id="basic-addon1">
-                      <i class="fas fa-lock"></i>
-                    </div>
-                    <input
-                      class="form-control"
-                      name="amountOfMembers"
-                      type="number"
-                    />
-                  </div>
-                </div>
-
-                <div
-                  class="mb-3 mt-3 d-flex flex-column"
-                  controlId="formBasicPassword"
-                >
-                  <label>Monthly Dues</label>
-                  <div class="input-group pt-2">
-                    <div class="input-group-text" id="basic-addon1">
-                      <i class="fas fa-lock"></i>
-                    </div>
-                    <input
-                      class="form-control"
-                      name="monthlyPaymentAmount"
-                      type="number"
-                    />
-                  </div>
-                </div>
-                <button class="btn mt-2 login-btn" type="submit">Login</button>
-              </form>
-            </div>
+    <div class="container-fluid">
+      <div class="row justify-content-around">
+        <!-- ==== NAVBAR ==== -->
+        <div class="col-sm-2 px-0">
+          <div class="sidebar font-dm-sans p-4 text-white" style="height: 100%">
+            <img src="/images/MAB-LOGO.png" alt="Mutual Bank Aid logo" />
+            <nav class="d-flex flex-column">
+              <a href="/dashboard">Dashboard</a>
+              <a href="/join">Create or Join House</a>
+              <a href="/settings">Settings</a>
+            </nav>
+            <a href="/logout"><button class="btn-sign-out">Sign out</button></a>
           </div>
         </div>
-        <!-- ==== Existing Houses ==== -->
-        <div
-          class="col-12 col-md-9 col-lg-7 col-xl-6 d-flex justify-content-around"
-        >
-          <div class="row mt-5 mt-md-4">
-            <h4>Join Existing Houses</h4>
-            <hr />
-            <%if(house.length){ %>
-            <% for (var i = 0; i < house.length;  i++ ) { %>
-            <div class="col-6">
-              <div class="card mt-1 mb-3">
+        <div class="col-10">
+          <div class="row">
+            <!-- ==== NEW HOUSE ==== -->
+            <div class="col-12 col-xl-6">
+              <div class="card" style="max-width: 1000px">
                 <div class="card-header">
-                  <h5><%= house[i].houseName%></h5>
+                  <h1 class="m-0 h2">Create a new house</h1>
                 </div>
-
-                <div class="card-body d-flex flex-column justify-content-around">
-                  <input type="hidden" value="<%= house[i]._id %>"></input>
-                  <p class="card-text">Start Date: <%= house[i].startDate%></p>
-                  <p class="card-text">Monthly Due: <%= house[i].monthlyPaymentAmount%></p>
-                  <p class="card-text">Members: <%= house[i].members.length%>/12</p>
-                  <button class="btn join-house-btn">Join House</button>
+                <div class="card-body">
+                  <form action="/newHouse" method="POST">
+                    <div class="mb-1 mt-0" controlId="formBasicEmail">
+                      <!-- ==== HOUSE NAME ==== -->
+                      <div
+                        class="mb-3 mt-3 d-flex flex-column"
+                        controlId="formBasicPassword"
+                      >
+                        <label>House Name</label>
+                        <div class="input-group pt-2">
+                          <div class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-lock"></i>
+                          </div>
+                          <input
+                            class="form-control"
+                            name="houseName"
+                            type="text"
+                            placeholder="Strawberry Mansion"
+                          />
+                        </div>
+                      </div>
+                      <!-- ==== START DATE ==== -->
+                      <div
+                        class="mb-3 mt-3 d-flex flex-column"
+                        controlId="formBasicPassword"
+                      >
+                        <label>Start Date</label>
+                        <div class="input-group pt-2">
+                          <div class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-lock"></i>
+                          </div>
+                          <input
+                            class="form-control"
+                            name="startDate"
+                            type="date"
+                          />
+                        </div>
+                      </div>
+                      <!-- ==== END DATE ==== -->
+                      <div
+                        class="mb-3 mt-3 d-flex flex-column"
+                        controlId="formBasicPassword"
+                      >
+                        <label>End Date</label>
+                        <div class="input-group pt-2">
+                          <div class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-lock"></i>
+                          </div>
+                          <input
+                            class="form-control"
+                            name="endDate"
+                            type="date"
+                          />
+                        </div>
+                      </div>
+                      <!-- ==== MONTHLY DUE DATE ==== -->
+                      <div
+                        class="mb-3 mt-3 d-flex flex-column"
+                        controlId="formBasicPassword"
+                      >
+                        <label>Monthly Due Date</label>
+                        <div class="input-group pt-2">
+                          <div class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-lock"></i>
+                          </div>
+                          <input
+                            class="form-control"
+                            name="monthlyDueDate"
+                            type="date"
+                          />
+                        </div>
+                      </div>
+                      <!-- ==== MEMBER COUNT ==== -->
+                      <div
+                        class="mb-3 mt-3 d-flex flex-column"
+                        controlId="formBasicPassword"
+                      >
+                        <label>Member Count</label>
+                        <div class="input-group pt-2">
+                          <div class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-lock"></i>
+                          </div>
+                          <input
+                            class="form-control"
+                            name="amountOfMembers"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                      <!-- ==== MONTHLY DUES ==== -->
+                      <div
+                        class="mb-3 mt-3 d-flex flex-column"
+                        controlId="formBasicPassword"
+                      >
+                        <label>Monthly Dues</label>
+                        <div class="input-group pt-2">
+                          <div class="input-group-text" id="basic-addon1">
+                            <i class="fas fa-lock"></i>
+                          </div>
+                          <input
+                            class="form-control"
+                            name="monthlyPaymentAmount"
+                            type="number"
+                          />
+                        </div>
+                      </div>
+                      <button class="btn mt-2 login-btn" type="submit">
+                        Create House
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
-            <%}%>
-            <%}%>
+
+            <div class="col-12 col-xl-6 existing-houses">
+              <h4>Join Existing Houses</h4>
+              <hr />
+              <div class="row">
+                <%if(house.length){ %> <% for (var i = 0; i < house.length; i++
+                ) { %>
+                <div class="col-6">
+                  <div class="card mt-1 mb-3">
+                    <div class="card-header">
+                      <h5><%= house[i].houseName%></h5>
+                    </div>
+                    <div
+                      class="card-body d-flex flex-column justify-content-around"
+                    >
+                      <input type="hidden" value="<%= house[i]._id %>" />
+                      <p class="card-text">
+                        Start Date: <%= house[i].startDate%>
+                      </p>
+                      <p class="card-text">
+                        Monthly Due: <%= house[i].monthlyPaymentAmount%>
+                      </p>
+                      <p class="card-text">
+                        Members: <%= house[i].members.length%>/12
+                      </p>
+                      <button class="btn join-house-btn">Join House</button>
+                    </div>
+                  </div>
+                </div>
+                <%}%> <%}%>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <script src="/js/join-house.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -183,5 +195,11 @@
       crossorigin="anonymous"
     ></script>
   </body>
-
 </html>
+
+
+
+
+
+
+

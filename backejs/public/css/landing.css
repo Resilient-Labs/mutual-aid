@@ -3,6 +3,7 @@
 .btn-link {
   color: #FCC03E !important;
 }
+
 h1{
   font-family: 'Josefin Sans', Arial, Helvetica, sans-serif;
 }
@@ -41,6 +42,7 @@ color: #FCC03E !important;
   text-transform: uppercase;
   width: 8em;
 }
+
 a {
   color: #FCC03E !important;
   text-decoration: none !important;
@@ -51,7 +53,9 @@ a {
   color: #FCC03E !important;
   font-size: 0.8em !important;
   text-transform: uppercase;
+  margin-left: 5px;
   width: 8em;
+
 }
 
 .btn-md {
@@ -71,6 +75,7 @@ a {
 
 .card-glow{
   background-color: #C5D5E4;
+  margin: auto;
 }
 
 .display-4 {
@@ -91,9 +96,17 @@ a {
 .footerItem {
   color: black;
 }
+
 .card-img-top {
-  height: 20rem;
+  height: 15rem;
+  margin: auto;
 }
+
+.img-fluid{
+  position: center;
+  margin-top: -3%;
+}
+
 .nav {
   background-color: white !important;
 }
@@ -108,3 +121,5 @@ a {
 .placeholder {
   background-color: #003090 !important;
 }
+
+

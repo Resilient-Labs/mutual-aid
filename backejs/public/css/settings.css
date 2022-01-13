@@ -196,7 +196,7 @@ nav a:hover {
 
 .btn-sign-out {
   color: #083070 !important;
-  font-size: 1rem !important;
+  
   align-self: center;
   background-color: #fcc03e;
   border: none;
@@ -206,8 +206,8 @@ nav a:hover {
   margin-top: clamp(4rem, 5vw, 8rem);
   padding: 4px 8px;
   width: 75%;
-  text-transform: uppercase !important;
-  font-weight: bolder;
+  
+  
   height: 40px;
 }
 
@@ -255,4 +255,46 @@ input[type='file'] {
 .questionmark {
   height: 12px;
   display: inline-block;
+}
+
+/* ================================== */
+nav a {
+  color: #051D40 !important;
+  font-size: 1.25rem;
+  font-weight: 500;
+  font-family: "DM Sans", Helvetica;
+  padding: 1rem 0;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #000000 !important;
+}
+ 
+.sidebar {
+  background-color: #C5D5E4 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: -3%;
+  position: relative;
+  text-align: center;
+}
+
+.btn-sign-out {
+  align-self: center;
+  background-color: rgb(226 232 240) ;
+  border: none;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-size: clamp(.5rem, 2.5vw, 1.25rem); 
+  margin-top: clamp(4rem, 5vw, 8rem); 
+  padding: 4px 8px;
+  width: 75%;
+}
+
+.btn-sign-out:hover {
+  background-color: #FD871B;
+  color: #FFFFFC;
+  text-decoration: none !important;
 }

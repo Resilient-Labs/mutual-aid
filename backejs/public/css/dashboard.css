@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
 /* DASHBOARD */
 
 a:link{
@@ -12,6 +14,10 @@ a:link{
 
 #dashboard-container {
   max-width: 1800px;
+}
+.dashboard-card{
+  border-radius: 8px;
+  margin-left: -10px;
 }
 
 .profile-pic {
@@ -35,7 +41,8 @@ a:link{
 .house-box {
   border-radius: 8px;
   padding: 2rem;
-  background: #FCC03E;
+  background: #fcc03ea5;
+  background-color: #FCC03E !important;
 }
 
 h6, h2{
@@ -43,12 +50,13 @@ h6, h2{
 }
 
 .bank-card {
-  background: #FCC03E;
-  border: 2px solid #FCC03E;
-  border-radius: 6px;
+  /* background: #FCC03E; */
+  background-color: #F1F4FD;
+  border-radius: 15px;
   height: 219.53px;
   margin: 0 auto;
-  width: 311px;
+  width: 370px;
+ 
 }
 
 .welcome-summary {
@@ -59,6 +67,7 @@ h6, h2{
 nav a {
   color: #051D40;
   font-size: 1.25rem;
+  font-family: "DM Sans" , helvetica;
   font-weight: 500;
   padding: 1rem 0;
   text-decoration: none;
@@ -88,10 +97,22 @@ nav a:hover {
   margin-top: clamp(4rem, 5vw, 8rem); 
   padding: 4px 8px;
   width: 75%;
+
+  font-family: "DM Sans" , helvetica;
+  
 }
 
 .btn-sign-out:hover {
   background-color: #FD871B;
   color: #FFFFFC;
   text-decoration: none !important;
+}
+
+t-form {
+  color: #36454F;
+  background-color: #FFFFFC;
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+  width: 40% !important;
 }
