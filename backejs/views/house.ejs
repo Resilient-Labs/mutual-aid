@@ -14,6 +14,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"s
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <script src="https://unpkg.com/phosphor-icons"></script>
   </head>
   <body>
@@ -62,7 +63,6 @@
               <form action="/create-checkout-session" class="deposit-form shadow p-3 mb-5 bg-white rounded" method="POST">
                 <label for="paymentAmount">Deposit amount:</label>
                 <input name="paymentAmount" placeholder="$50" type="number" step="0.01" required>
-                <input name="houseID" type="text" value="<%= house[i]._id %>" hidden>
                 <input name="userName" type="text" value="<%= user.firstName %>" hidden>
                 <button type="submit" class="btn btn-dark btn-sm">Deposit</button>
               </form>
@@ -87,35 +87,30 @@
                 </tr>
               </thead>
               <tbody>
-                <% for(var i=0; i<house.length; i++) {%>
-                  <% for(var m=0; m<house[i].members.length; m++) {%>
+                <% for(let i=0; i<transactions.length; i++) {%>
                 <tr>
-                  <th scope="row"><%= house[i].members[m].firstName %> <%= house[i].members[m].lastName %></th>
-                  <td>$50</td>
-                  <!-- <td>May 2022</td> -->
+                  <th scope="row"><%= transactions[i].paidBy %></th>
+                  <td>$<%= transactions[i].payment %></td>
+                  <td><%= transactions[i].paidOn %></td>
                   <td><a><button class="btn btn-payout btn-primary">Payout</button></td></a>
                 </tr>
-                  <%}%>
                 <%}%>
               </tbody>
             </table>
           </div>
-        
           <!-- === HOUSE MESSAGE BOARD === -->
 
           <div class="message-board">
             <h3>Message Board</h3>
             <ul class="messages">
-              <% for(var j=0; j<messages.length; j++) {%>
+              <% for(let i=0; i<messages.length; i++) {%>
                 <li class="message">
-                  <span><%= messages[j].message %></span>
-                  <!-- <span><%= messages[j].message %></span> -->
-                  <span class="fa-trash">trash</span>
+                  <span><%= messages[i].message %></span>
+                  <span><%= messages[i].postedBy %></span>
+                  <span><i class="bi bi-trash"></i></span>
                 </li>
               <% } %>
-              </ul>
-                                
-                  <span class="fa-trash">trash</span>
+              </ul>                                
                 </div>
               </div>
 
@@ -135,10 +130,10 @@
                <form action="/house/messages" method="POST">
                 <div class="input-group mb-3">
                 <input type="text" class="form-control mt-2" placeholder="write a message...." aria-label="Recipient's username" aria-describedby="basic-addon2" name="message">
+                <input type="text" class="form-control mt-2" name="postedBy" placeholder="posted by:" required>
                 <div class="input-group-append">
                   <button type="submit" class="btn mt-2" type="button"><a><i class="ph-arrow-square-up"></i></button></a>
                 </div>
-                <!--  close for the for loop on line 40-->
               </div>
             </form>
           </div>

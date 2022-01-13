@@ -12,12 +12,13 @@ var ObjectId = require('mongodb').ObjectID;
 module.exports = {
   getHouse: async (req, res) => {
     console.log('zebra', ObjectId(req.params.zebra) )
-    let houseId = ObjectId(req.params.zebra) //this is house id
+    houseId = ObjectId(req.params.zebra) //DO NOT CHANGE THIS LINE!!!!
     console.log(houseId)
     
     try {
       const house = await House.find({_id: houseId})
-      const messages = await Messages.find()
+      const messages = await Messages.find({house: houseId})
+      const transactions = await Transactions.find({house: houseId})
       const profile = await Profile.find({ user: req.user.id });
 
       let startDate = null
@@ -61,7 +62,9 @@ module.exports = {
 
       res.render("house.ejs", {
       user: req.user,
+      messages: messages,
       house: house,
+      transactions: transactions,
       endOfCycle,
       countDown,
       cycleOver,
@@ -143,7 +146,7 @@ module.exports = {
               product_data: {
                 name: 'mutual aid payment',
                 metadata: {
-                  'house_id': req.body.houseID,
+                  // 'house_id': req.body.houseID,
                   'user_name': req.body.userName,
                   'user_id': req.body.userId,
                 }
@@ -154,7 +157,7 @@ module.exports = {
             quantity: 1
             }
           ],
-          success_url: `${process.env.SERVER_URL}/payment-success?amount=${req.body.paymentAmount}&houseid=${req.body.houseID}&userid=${req.body.userId}`,
+          success_url: `${process.env.SERVER_URL}/payment-success?amount=${req.body.paymentAmount}&houseid=${houseId}&username=${req.body.userName}`,
           cancel_url: `${process.env.SERVER_URL}/cancel.html`
         })
         res.redirect(session.url)
@@ -167,28 +170,28 @@ module.exports = {
       //records the payment in the db then redirect to house page
       try {
         console.log('hello')
-        console.log(ObjectId(req.query.userId), ObjectId(req.query.houseID))
+        //console.log(ObjectId(req.query.userId), ObjectId(req.query.houseID)) //not working 
         Transactions.create({
-          user: ObjectId(req.query.userId),
+          // user:req.query.userId,
+          paidBy: req.query.username,
           payment: req.query.amount,
-          houseId: ObjectId(req.query.houseID),
+          house: req.query.houseid,
           paidOn: Date.now()
         })
-        res.redirect(`/house/${ObjectId(req.query.houseID)}`)
+        res.redirect(`/house/${houseId}`)
       } catch (e){
         res.status(500).json({error:e.message})
         console.log('db save error')
       }
     },
     createMessage: async (req, res) => {
-      console.log('message zebra', ObjectId(req.params.zebra), req.body.houseId )
       try {
-      let houseId = ObjectId(re)
         const house = await House.find({_id: req.body.houseId})
+
         await Messages.create({
-          user: req.user.id,
+          postedBy: req.body.postedBy,
           message: req.body.message,
-          houseURL: houseId,
+          house: houseId,
           paidOn: Date.now(),
         })
         console.log('house test', house)
