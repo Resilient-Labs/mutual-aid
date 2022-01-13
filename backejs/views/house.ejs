@@ -43,11 +43,7 @@
      
           <div class="payment-bar">
             <div class="payment-items">
-              <span class="payment-number"><%= house[i].monthlyPaymentAmount %></span>
-              <span class="payment-title">Current Pool</span>
-            </div>
-            <div class="payment-items">
-              <span class="payment-number"><%= paymentDate %></span>
+              <span class="payment-number"><%= endOfCycle %></span>
               <span class="payment-title">Current Cycle Ends</span>
             </div>
             <div class="payment-items">
@@ -74,6 +70,7 @@
           </div>
         </div>
         </header>
+      <%}%> 
 
         <div class="house-info-and-messages">
 
@@ -90,12 +87,12 @@
                 </tr>
               </thead>
               <tbody>
-                <% for(var i=0; i<house.length; i++) {%>}
-                  <% for(var m=0; m<house[i].members.length; m++) {%>}
+                <% for(var i=0; i<house.length; i++) {%>
+                  <% for(var m=0; m<house[i].members.length; m++) {%>
                 <tr>
-                  <th scope="row"><%= house[i].members[m].firstName %></th>
-                  <td>$10</td>
-                  <td>May 2022</td>
+                  <th scope="row"><%= house[i].members[m].firstName %> <%= house[i].members[m].lastName %></th>
+                  <td>$50</td>
+                  <!-- <td>May 2022</td> -->
                   <td><a><button class="btn btn-payout btn-primary">Payout</button></td></a>
                 </tr>
                   <%}%>
@@ -108,18 +105,17 @@
 
           <div class="message-board">
             <h3>Message Board</h3>
-            <ul class="mejsagej">
-j              <% for(var i=0; i<messages.length; i++) {%>
+            <ul class="messages">
+              <% for(var j=0; j<messages.length; j++) {%>
                 <li class="message">
-j                  <span><%= messages[i].message %></span>
-j                  <span><%= messages[i].message %></span>
+                  <span><%= messages[j].message %></span>
+                  <!-- <span><%= messages[j].message %></span> -->
                   <span class="fa-trash">trash</span>
                 </li>
               <% } %>
               </ul>
                                 
                   <span class="fa-trash">trash</span>
-                  <span><i class="fa fa
                 </div>
               </div>
 
@@ -138,12 +134,11 @@ j                  <span><%= messages[i].message %></span>
             
                <form action="/house/messages" method="POST">
                 <div class="input-group mb-3">
-                <input type="text" class="form-control mt-2" placeholder="write a message...." aria-label="Recipient's username" aria-describedby="basic-addon2" name="msg">
+                <input type="text" class="form-control mt-2" placeholder="write a message...." aria-label="Recipient's username" aria-describedby="basic-addon2" name="message">
                 <div class="input-group-append">
                   <button type="submit" class="btn mt-2" type="button"><a><i class="ph-arrow-square-up"></i></button></a>
                 </div>
                 <!--  close for the for loop on line 40-->
-        <%}%> 
               </div>
             </form>
           </div>

@@ -14,7 +14,7 @@ const MessagesSchema = new mongoose.Schema({
     default: Date.now(),
   },
   house: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
   }
 });
 

@@ -18,10 +18,12 @@ router.get('/house/:zebra', ensureAuth, houseController.getHouse)
 router.post('/house/messages', ensureAuth, houseController.createMessage) 
 router.delete('/house/messages', ensureAuth, houseController.deleteMessage)
 
+
 router.post("/create-checkout-session", houseController.getCheckout); //stripe API route
 router.get("/payment-success", houseController.getPaymentSuccess) //route to redirect from successful payment
 
-router.get("/join", ensureAuth, houseController.joinHouse);
+router.get("/join", ensureAuth, houseController.publicHouses);
+router.put("/join", ensureAuth, houseController.joinHouse);
 router.post("/createProfile", upload.single("file"), profileController.createProfile);
 router.post("/newHouse", houseController.createHouse);
 
