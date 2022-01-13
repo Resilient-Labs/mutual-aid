@@ -19,9 +19,22 @@ module.exports = {
     try {
       console.log(req.user.id)
       const profile = await Profile.find({ user: req.user.id });
-      const houses = await House.find({ members: [ObjectId(req.user.id)] });
+      const houses = await House.find({ 'members.userId': ObjectId(req.user.id)});
 
       // const house = await House.find({})
+
+      // find the specific house
+
+      // const members = House.find()
+      // let hasBeenRandomized = false
+
+      // loop that needs to go thru the house object's members
+      // for (let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], i = numbers.length; i--;) {
+      //   const randomNum = numbers.splice(Math.floor(Math.random() * (i + 1)), 1)[0]
+      //   console.log('this is the random number we have to assign to members', randomNum)
+      //   hasBeenRandomized = true
+    // }
+
       console.log('hello there')
       //Note for DevOps : to render .ejs template it can be 'profile.ejs' or what front-end called 'settings'. This is taking care of rendering the users' profile data comming from the database
       res.render("dashboard.ejs", { profile: profile, houses: houses, user: req.user });

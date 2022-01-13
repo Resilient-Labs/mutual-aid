@@ -1,5 +1,3 @@
-<!-- -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,9 +15,10 @@
     />
   </head>
   <body>
+    <h1>sddjdj</h1>
     <nav class="font-dm-sans">
       <div class="nav-pages">
-        <a href="index.html">
+        <a href="/">
           <img
             src="/images/MAB-LOGO.png"
             alt="Mutual Aid Bank logo"
@@ -161,13 +160,12 @@
                   <h5><%= house[i].houseName%></h5>
                 </div>
 
-                <div
-                  class="card-body d-flex flex-column justify-content-around"
-                >
+                <div class="card-body d-flex flex-column justify-content-around">
+                  <input type="hidden" value="<%= house[i]._id %>"></input>
                   <p class="card-text">Start Date: <%= house[i].startDate%></p>
-                  
+                  <p class="card-text">Monthly Due: <%= house[i].monthlyPaymentAmount%></p>
                   <p class="card-text">Members: <%= house[i].members.length%>/12</p>
-                  <a href="#" class="btn join-house-btn">Join House</a>
+                  <button class="btn join-house-btn">Join House</button>
                 </div>
               </div>
             </div>
@@ -177,12 +175,13 @@
         </div>
       </div>
     </div>
+    
+    <script src="/js/join-house.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
   </body>
-</html>
 
 </html>

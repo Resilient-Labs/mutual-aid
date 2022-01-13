@@ -114,7 +114,7 @@ nav a {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   color: #FFF;
   display: inline;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   font-weight: 600;
   padding: 8px 12px;
 }
@@ -131,9 +131,10 @@ h1 {
   font-weight: 600 !important;
   margin-bottom: 1rem !important;
 }
-.container-signup {
+.signup-copy h1 {
   margin: auto;
-  width: 1366px;
+  text-align: center;
+  width: 75%;
 }
 .img-bagheera {
   border: 6px solid #FFF;
@@ -183,14 +184,4 @@ h1 {
   font-weight: 600;
   margin-top: 1rem;
   padding: .5rem 1rem;
-}
-
-.navbar {
-  height: 80px;
-}
-
-
-.join-house-btn {
-  background: #fd871b !important;
-  color: whitesmoke !important;
 }

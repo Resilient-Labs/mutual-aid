@@ -1,11 +1,15 @@
 const mongoose = require("mongoose");
 
 const TransactionsSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "User",
+  // },
+  paidBy: {
+    type:String,
+    require: true
   },
-  houseId: {
+  house: {
     type: String,
     require: true
   },

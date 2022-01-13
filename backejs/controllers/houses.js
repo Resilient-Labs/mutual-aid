@@ -11,12 +11,14 @@ var ObjectId = require('mongodb').ObjectID;
 
 module.exports = {
   getHouse: async (req, res) => {
-
-    let houseId = ObjectId(req.params.zebra) //this is house id
+    console.log('zebra', ObjectId(req.params.zebra) )
+    houseId = ObjectId(req.params.zebra) //DO NOT CHANGE THIS LINE!!!!
+    console.log(houseId)
     
     try {
       const house = await House.find({_id: houseId})
-      const messages = await Messages.find()
+      const messages = await Messages.find({house: houseId})
+      const transactions = await Transactions.find({house: houseId})
       const profile = await Profile.find({ user: req.user.id });
 
       let startDate = null
@@ -39,11 +41,15 @@ module.exports = {
           paymentDate = paymentDate.add(1, 'month')
         }
       }
+
       else{
         paymentDate = startDate
       }
-      let endOfCycle = momentStartDate.add(1, 'year')
+
+      let endOfCycle = momentStartDate.clone()
+      endOfCycle.add(1, 'year') 
       let cycleOver = false
+
       if(paymentDate.isAfter(endOfCycle)){
         countDown = 0
         cycleOver = true
@@ -52,33 +58,45 @@ module.exports = {
       let countDown = Math.floor((paymentDate - currentDate) / millisecondsPerDay)
       
       console.log('when does the cycle end?', endOfCycle, 'is the cycle over?',cycleOver)
-      console.log('countDown:', countDown, 'startDate', startDate, 'endOfCycle', endOfCycle, 'payment date', paymentDate, 'curentDate', currentDate)      //getting millisecs between the two dates (86,400 x 1000 = ms in a day)
-      console.log('USER', req.user)
+      console.log('countDown:', countDown, 'startDate', startDate, 'endOfCycle', endOfCycle, 'payment date', paymentDate, 'curentDate', currentDate) 
 
       res.render("house.ejs", {
-      user: req.user.firstName,
+      user: req.user,
+      messages: messages,
       house: house,
+      transactions: transactions,
       endOfCycle,
       countDown,
       cycleOver,
       startDate: moment(startDate).format('MM-DD-YYYY'),
-      currentDate,
       paymentDate: moment(paymentDate).format('MM-DD-YYYY'),
-      //messages: messages
       }); 
     } catch (err) {
       console.log('herror is happening')
       console.log(err);
     }
   },
-  joinHouse: async (req, res) => {
+  publicHouses: async (req, res) => {
     try {
       const house = await House.find();
-      res.render("join-house.ejs",{house:house});
+      res.render('join-house.ejs', { house: house });
     } catch (err) {
-      console.log('herror is happening')
+      console.log('herror is happening');
       console.log(err);
     }
+  },
+  joinHouse: async (req, res) => {
+    try {
+      let houseId = ObjectId(req.body.houseId); //this is house id
+      const house = await House.findOneAndUpdate({
+        "_id": houseId}, {$push: {"members": [{'userId': req.user._id, 'firstName': req.user.firstName, 'lastName': req.user.lastName}]}
+      });
+      console.log("you've been added to the house!!");
+      // res.redirect("/dashboard");
+    } catch (err) {
+      console.log('herror is happening');
+      console.log(err);
+    } 
   },
   createHouse: async (req, res) => {
     console.log('hey I am working I am creatting Houses')
@@ -98,7 +116,7 @@ module.exports = {
         members: [{'userId': adminId, 'firstName': req.user.firstName, 'lastName': req.user.lastName}]
       });
       console.log("Profile has been added!");
-      res.redirect("/join");
+      res.redirect("/dashboard");
     } catch (err) {
       console.log(err);
     }
@@ -127,7 +145,11 @@ module.exports = {
               currency: 'usd',
               product_data: {
                 name: 'mutual aid payment',
-                metadata: {'house_id': req.body.houseID }
+                metadata: {
+                  // 'house_id': req.body.houseID,
+                  'user_name': req.body.userName,
+                  'user_id': req.body.userId,
+                }
               },
               unit_amount: req.body.paymentAmount * 100,
               
@@ -135,7 +157,7 @@ module.exports = {
             quantity: 1
             }
           ],
-          success_url: `${process.env.SERVER_URL}/payment-success?amount=${req.body.paymentAmount}&houseid=${req.body.houseID}`,
+          success_url: `${process.env.SERVER_URL}/payment-success?amount=${req.body.paymentAmount}&houseid=${houseId}&username=${req.body.userName}`,
           cancel_url: `${process.env.SERVER_URL}/cancel.html`
         })
         res.redirect(session.url)
@@ -148,13 +170,15 @@ module.exports = {
       //records the payment in the db then redirect to house page
       try {
         console.log('hello')
+        //console.log(ObjectId(req.query.userId), ObjectId(req.query.houseID)) //not working 
         Transactions.create({
-          user: req.user.id,
+          // user:req.query.userId,
+          paidBy: req.query.username,
           payment: req.query.amount,
-          houseId: req.query.houseid,
+          house: req.query.houseid,
           paidOn: Date.now()
         })
-        res.redirect('/house/' + req.query.houseid)
+        res.redirect(`/house/${houseId}`)
       } catch (e){
         res.status(500).json({error:e.message})
         console.log('db save error')
@@ -162,13 +186,16 @@ module.exports = {
     },
     createMessage: async (req, res) => {
       try {
+        const house = await House.find({_id: req.body.houseId})
+
         await Messages.create({
-          user: req.user.id,
+          postedBy: req.body.postedBy,
           message: req.body.message,
+          house: houseId,
           paidOn: Date.now(),
         })
-        console.log('message added successfuly')
-        res.redirect('/house')
+        console.log('house test', house)
+        res.redirect('/house/' + houseId)
       } catch (e){
         res.status(500).json({error:e.message})
         console.log('error creating message')
